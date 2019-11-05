@@ -1,0 +1,39 @@
+.about {
+  text-align: center;
+  width: auto;
+}
+
+
+.txtA {
+  text-align: center;
+}
+
+
+.fdc {
+  flex-direction: column;
+}
+
+.fww {
+  flex-wrap: wrap;
+}
+
+.boxSize {
+  justify-content: center;
+}
+
+.box {
+  flex:1 1 160px;
+}
+
+
+.hourDescript {
+  margin: 0 20% 10% 20%;
+}
+
+.ma {
+  margin:auto;
+}
+
+.spacing {
+  padding: 10px;
+}

@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Welcomesvsdfsdqfsdfsqfqsdfdsq!{% endblock %}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="{{asset('css/base.css') }}" rel="stylesheet" type="text/css"/>
+  {% block stylesheets %}{% endblock %}
+</head>
+<body>
+  <div class="baseContainer"> <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
+    <header>
+      <ul class="nav txtac"> <!--Nav utilisant bootstrap-->
+        <div class="dff">
+          <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
+            <a class="nav-link redcol" href="/">Accueil</a>
+          </li>
+          <li class="nav-item headerLeft">
+            <a class="nav-link redcol" href="/formules">Nos formules</a>
+          </li>
+          <li class="nav-item headerLeft">
+            <a class="nav-link redcol" href="/produits">Nos produits</a>
+          </li>
+        </div>
+        <div class="dff">
+          <li class="nav-item">
+            <a class="nav-link logo" href="/">
+              <img src="{{asset('asset/logo.png')}}" alt="Logo de la BraiseDorée" width="300px" height="150px">
+            </a>
+          </li>
+        </div>
+        <div class="dff">
+          <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
+            <a class="nav-link redcol" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol" href="#"><i class="fas fa-shopping-cart"></i></a> <!--Icône du panier-->
+          </li>
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol" href="/connection">Connection</a>
+          </li>
+        </div>
+      </ul>
+    </header>
+
+    <hr class="separator">
+    <div class="blockContainer">
+      {% block body %}{% endblock %}
+    </div>
+    <hr class="separator">
+
+    <footer>
+      <div class="footerContainer"> <!--container du footer-->
+        <div class="">
+        <div class="">
+          <h3>Suivez-nous</h3>
+          <span class="reseauSociau">
+            <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
+          </span>
+          <span class="reseauSociau">
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          </span>
+        </div>
+        <div class="">
+        </div>
+      </div>
+      </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--Lien perméttant d'utiliser les icônes de fontawesome (icônes de facebook,twitter....) -->
+    {% block javascripts %}{% endblock %}
+  </div>
+</body>
 </html>

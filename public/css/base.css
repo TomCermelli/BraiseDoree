@@ -1,0 +1,67 @@
+.baseContainer {
+  background-color: black;
+  font-size:1.2em ;
+  font-family: ;
+  color: white;
+}
+
+.redcol { /*couleur réservé pour les titres*/
+  color: #ed000b;
+}
+
+.headerLeft {
+ margin:18% 0 0 0;
+}
+
+.headerRight {
+  margin: 23% 0 0 0;
+
+}
+
+.dff {
+display:flex;
+justify-content: space-around;
+flex-direction: row;
+flex-wrap: wrap;
+
+}
+
+.txtac {
+  justify-content: center;
+  text-align: center;
+  padding: 0 4% 0 0;
+}
+
+.separator {
+  color: red;
+  border: 1px solid;
+}
+
+.footerContainer {
+  text-align: center;
+}
+
+.reseauSociau {
+  margin:0 15px 0 15px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.df {
+  display: flex;
+}
+
+.logo {
+  margin:0 30% 0 0%;
+}
