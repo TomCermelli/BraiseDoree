@@ -9,13 +9,20 @@
   color: #ed000b;
 }
 
+.title {
+  font-size: 
+}
+
 .headerLeft {
  margin:18% 0 0 0;
 }
 
 .headerRight {
   margin: 23% 0 0 0;
+}
 
+.navPos {
+  position:fixe
 }
 
 .dff {
@@ -35,6 +42,7 @@ flex-wrap: wrap;
 .separator {
   color: red;
   border: 1px solid;
+  opacity: 0.5;
 }
 
 .footerContainer {
