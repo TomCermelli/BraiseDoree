@@ -1,91 +1,143 @@
 <?php
-
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+class Contact {
+
+
+  /**
+   *@var string|null
+   *@Assert\NotBlank()
+   *@Assert\Length(min=2, max=100)
+   */
+  private $firstname;
+
+  /**
+   *@var string|null
+   *@Assert\NotBlank()
+   *@Assert\Length(min=2, max=100)
+   */
+  private $lastname;
+
+  /**
+   *@var string|null
+   *@Assert\NotBlank()
+   *@Assert\Email()
+   */
+  private $email;
+
+  /**
+   *@var string|null
+   *@Assert\NotBlank()
+   *@Assert\Length(min=2)
+   */
+  private $subject;
+
+  /**
+   *@var string|null
+   *@Assert\NotBlank()
+   *@Assert\Length(min=8, max=700)
+   */
+  private $message;
+
+
+
+  /**
+    *@return null|string
+    */
+  public function getFirstname(): ?string
+    {
+      return $this->firstname;
+    }
+
+  /**
+   *@param null|string $firstname
+   *@return Contact
+   */
+  public function setFirstname(?string $firstname): Contact
+  {
+    $this->firstname = $firstname;
+    return $this;
+  }
+
+  /**
+    *@return null|string
+    */
+  public function getLastname(): ?string
+    {
+      return $this->lastname;
+    }
+
+  /**
+   *@param null|string $lastname
+   *@return Contact
+   */
+  public function setLastname(?string $lastname): Contact
+  {
+    $this->lastname = $lastname;
+    return $this;
+  }
+
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
+  *@return null|string
+  */
+public function getEmail(): ?string
+  {
+    return $this->email;
+  }
+
+/**
+ *@param null|string $email
+ *@return Contact
  */
-class Contact
+public function setEmail(?string $email): Contact
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+  $this->email = $email;
+  return $this;
+}
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
+/**
+  *@return null|string
+  */
+public function getSubject(): ?string
+  {
+    return $this->subject;
+  }
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $mail;
+/**
+ *@param null|string $subject
+ *@return Contact
+ */
+public function setSubject(?string $subject): Contact
+{
+  $this->subject = $subject;
+  return $this;
+}
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $subject;
 
-    /**
-     * @ORM\Column(type="string", length=700)
-     */
-    private $message;
+/**
+ *@return null|string
+ */
+public function getMessage(): ?string
+{
+  return $this->message;
+}
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+/**
+ *@param null|string $message
+ *@return Contact
+ */
+public function setMessage(?string $message): Contact
+{
+  $this->message = $message;
+  return $this;
+}
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
 
-    public function setName(string $name): self
-    {
-        $this->name = $name;
 
-        return $this;
-    }
 
-    public function getMail(): ?string
-    {
-        return $this->mail;
-    }
 
-    public function setMail(string $mail): self
-    {
-        $this->mail = $mail;
 
-        return $this;
-    }
-
-    public function getSubject(): ?string
-    {
-        return $this->subject;
-    }
-
-    public function setSubject(string $subject): self
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
-
-    public function getMessage(): ?string
-    {
-        return $this->message;
-    }
-
-    public function setMessage(string $message): self
-    {
-        $this->message = $message;
-
-        return $this;
-    }
 }

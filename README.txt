@@ -16,3 +16,4 @@ Installation:
 Bundle utilisé
 
 •SwiftMailer
+•Validator
