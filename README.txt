@@ -1,6 +1,6 @@
 Pré-Requis
 
-Si vous voulez travailler sur ce projet utiliser au moin les versions cité ci-dessous
+Si vous voulez travailler sur ce projet utiliser au moin les versions citées ci-dessous
 -PHP 7.3.10
 -Composer 1.9.0
 -Symfony 4.3.6
@@ -15,5 +15,6 @@ Installation:
 
 Bundle utilisé
 
-•SwiftMailer
-•Validator
+•SwiftMailer *
+•Validator *
+•Security
