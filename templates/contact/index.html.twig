@@ -9,28 +9,9 @@
     <h3>Adresse</h3>
     <p></p>
     <p>Tel : 00 00 00 00 00 00</p>
-
   </div>
 
-
-  <div>
-    <form>
-      <div class="">
-        <label for="name">Nom complet</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" required>
-      </div>
-      <label for="sujet">Sujet</label>
-      <input type="text" id="sujet" name="sujet" required>
-      <label for="message">Message</label>
-      <input type="textarea" id="message" name="message" required maxlength="350">
-      <input type="submit" id="submit" name="submit" value="Envoyer">
-    </form>
-  </div>
-
-
-  <div id="contactForm">
+  <div id="contactForm" class="df">
     {{form_start(form)}}
       <div>
         <label for="lastname">Nom <span class="redcol">*</span></label>
@@ -42,7 +23,8 @@
         {{form_row(form.email)}}
       </div>
       {{form_row(form.message)}}
-    {{form_start(form)}}
+      <input type="submit" id="submit" name="submit" value="Envoyer">
+    {{form_end(form)}}
   </div>
 
 </div>
