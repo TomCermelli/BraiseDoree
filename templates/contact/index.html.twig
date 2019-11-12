@@ -5,10 +5,10 @@
 {% block body %}
 
 {% for message in app.flashes('success') %}
-  <div class="alert alert-success">
-    <p>Bonjour</p>
-    {{ message }}
-  </div>
+<div class="alert alert-success">
+  <p>Bonjour</p>
+  {{ message }}
+</div>
 {% endfor %}
 
 
@@ -22,17 +22,20 @@
 
   <div id="contactForm" class="df">
     {{form_start(form)}}
-      <div class="df">
-        <label for="lastname">Nom <span class="redcol">*</span></label>
-        {{form_row(form.lastname)}}
-        {{form_row(form.firstname)}}
-      </div>
-      <div class="df">
-        {{form_row(form.subject)}}
-        {{form_row(form.email)}}
-      </div class="df">
-      {{form_row(form.message)}}
+    <div class="df">
+      
+      {{form_row(form.lastname)}}
+
+      {{form_row(form.firstname)}}
+    </div>
+    <div class="df">
+      {{form_row(form.subject)}}
+      {{form_row(form.email)}}
+    </div class="df">
+    {{form_row(form.message)}}
+    <div>
       <input type="submit" id="submit" name="submit" value="Envoyer">
+    </div>
     {{form_end(form)}}
   </div>
 
