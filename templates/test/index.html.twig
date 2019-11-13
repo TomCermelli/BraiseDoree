@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Salut</th>
+                <th>Roles</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -17,7 +17,7 @@
         {% for test in tests %}
             <tr>
                 <td>{{ test.id }}</td>
-                <td>{{ test.salut }}</td>
+                <td>{{ test.roles }}</td>
                 <td>
                     <a href="{{ path('test_show', {'id': test.id}) }}">show</a>
                     <a href="{{ path('test_edit', {'id': test.id}) }}">edit</a>

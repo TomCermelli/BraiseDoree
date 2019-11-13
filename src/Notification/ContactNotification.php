@@ -13,12 +13,12 @@ public function __construct(\Swift_Mailer $mailer, Environment $renderer){
 }
 
 public function notify(Contact $contact){
-  $message = (new \Swift_Message ('Agence : ' . $contact->getSubject() ))
+  $message = (new \Swift_Message ('La Braise Dorée : ' . $contact->getSubject() ))
     ->setFrom($contact->getEmail())
     ->setTo('Tom.Cermelli91@gmail.com')
     ->setReplyTo($contact->getEmail())
     ->setBody($this->renderer->render('email/contact.html.twig' , [
-      'contact' =>$contact
+      'contact' => $contact
     ]),
     'text/html'
   );

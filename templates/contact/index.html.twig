@@ -6,7 +6,7 @@
 
 {% for message in app.flashes('success') %}
 <div class="alert alert-success">
-  <p>Bonjour</p>
+  <p>Votre mail a été envoyé avec succès</p>
   {{ message }}
 </div>
 {% endfor %}
@@ -23,7 +23,7 @@
   <div id="contactForm" class="df">
     {{form_start(form)}}
     <div class="df">
-      
+
       {{form_row(form.lastname)}}
 
       {{form_row(form.firstname)}}

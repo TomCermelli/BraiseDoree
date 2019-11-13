@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{% endblock %}
+{% block body %}
+<link href="{{asset('css/home.css') }}" rel="stylesheet" type="text/css"/>
+
+<div class="df">
+  <li class=""> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
+    <a class="redcol" href="/">Crée une pizza</a>
+  </li>
+  <li class="">
+    <a class="redcol" href="/">Crée un produit</a>
+  </li>
+  <li class="">
+    <a class="redcol" href="/">Crée un ingrédient</a>
+  </li>
+  <li class="">
+    <a class="redcol" href="/">Crée une boisson</a>
+  </li>
+</div>
+{% endblock %}

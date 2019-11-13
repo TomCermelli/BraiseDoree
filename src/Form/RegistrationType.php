@@ -21,7 +21,6 @@ class RegistrationType extends AbstractType
             /*le PasswordType permet d'avoir un champ de type password ce qui
             permet de cacher la saisie du mot de passe au moment de rentrer l'information*/
             ->add('confirm_password', PasswordType::class)
-            ->add('admin')
         ;
     }
 

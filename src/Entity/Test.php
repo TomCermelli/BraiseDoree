@@ -19,21 +19,21 @@ class Test
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $salut;
+    private $roles;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSalut(): ?string
+    public function getRoles(): ?string
     {
-        return $this->salut;
+        return $this->roles;
     }
 
-    public function setSalut(string $salut): self
+    public function setRoles(string $roles): self
     {
-        $this->salut = $salut;
+        $this->roles = $roles;
 
         return $this;
     }

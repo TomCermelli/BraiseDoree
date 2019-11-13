@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
@@ -31,11 +32,15 @@ class SecurityController extends AbstractController
         /*On passe l'User à l'encoder ,étant donné que dans le fichier security.yaml on a déja déterminer quelle algorithm utiliser,
          nous n'avons pas besoin de lui envoyer le type de cryptage. On envoie ensuite ce que l'ont veut encoder, ici le mot de passe de l'user*/
         $user->setPassword($hash);
+        $roles=array('ROLE_USER');
+        $user->setRoles($roles); /*Avant d'envoyer toute les données en base, on met le role par défaut de l'utilisateur (ROLE_USER) */
 
         $manager->persist($user); /*On prépare les données*/
         $manager->flush(); /*On envoie les données*/
 
-        return $this->redirectToRoute('security_login');
+        $this->addFlash('succes', 'Votre compte à bien été enregistré.'); /*Si tout se passe bien un message est affiché à l'utilsateur*/
+
+        return $this->redirectToRoute('security_login');/*Une fois que toute les données sont envoyées à la base, nous redirigeons l'utilisateur sur la page de connexion*/
       }
       return $this->render ('security/registration.html.twig' , [
         'form' =>$form->createView()
@@ -45,9 +50,16 @@ class SecurityController extends AbstractController
     /**
      * @Route("/connexion", name="security_login")
      */
-    public function login(){
-        return $this->render('security/login.html.twig');
+    public function login(Request $request, AuthenticationUtils $authenticationUtils){
 
+        $error = $authenticationUtils->getLastAuthenticationError();/*on récupère une erreur si le formulaire soumis est invalide (mauvais identifiant ou mot de passe)*/
+        $lastUsername = $authenticationUtils->getLastUsername();/*le dernier nom entré par l'utilisateur (notre identifiant est ici l'email)*/
+
+
+        return $this->render('security/login.html.twig' , [
+          'last_username' => $lastUsername,
+          'error' => $error
+        ]);
     }
 
     /**
