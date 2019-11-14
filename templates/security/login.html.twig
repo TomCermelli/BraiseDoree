@@ -1,24 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<link href="{{asset('css/connexion.css') }}" rel="stylesheet" type="text/css"/>
 
-<h1>Connexion</h1>
+<div class="df flexbox-container">
 
-<!-- S'il y a une erreur, on l'affiche -->
-  {% if error %}
-    <div class="alert alert-danger">Votre Identifiant ou mot de passe est incorrect</div>
-  {% endif %}
+  <div class="df">
+    <form action="{{ path('security_login') }}" method="post">
+      <div class="form-group">
+        <input placeholder="Adresse email ..." type="text" required name="_username" class="username" value="">
+      </div>
+      <div class="form-group">
+        <input placeholder="Mot de passe ..." type="password" required name="_password" class="password" value="">
+      </div>
+      <div>
+        <button type="submit" class="btn btn-succes">Connexion</button>
+      </div>
+      <a class="" href="/inscription">Vous n'êtes pas encore incrit ? cliquer ici</a>
+    </form>
+  </div>
 
-<form action="{{ path('security_login') }}" method="post">
-  <div class="form-group">
-    <input placeholder="Adresse email ..." type="text" required name="_username" class="username" value="{{ last_username }}">
-  </div>
-  <div class="form-group">
-    <input placeholder="Mot de passe ..." type="password" required name="_password" class="password" value="">
-  </div>
-  <div>
-    <button type="submit" class="btn btn-succes">Connexion</button>
-  </div>
-</form>
+</div>
 
 {% endblock %}
