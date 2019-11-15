@@ -1,0 +1,42 @@
+.placementProduit {
+  flex-direction: column;
+}
+
+.espacement {
+  margin: 7%;
+}
+
+.positionPizza {
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  /*width: 38%;*/
+}
+
+.divPizza {
+  /*width: 20%;*/
+  text-align: center;
+  flex-direction: column;
+  border: white solid;
+}
+
+.posIngredient {
+  margin: 5% 0 0 0;
+}
+
+.divPrix{
+  /*width: 7%;*/
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: wrap;
+  border: white solid;
+}
+
+.posPrix {
+  margin:0 0 0 0;
+}
+
+.miniTitle {
+
+  font-size: 1.1em;
+  margin: 0 0 0 0;
+}

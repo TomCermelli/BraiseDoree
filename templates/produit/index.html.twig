@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link href="{{asset('css/produit.css') }}" rel="stylesheet" type="text/css"/>
+
+<div class="df">
+  <div class="df placementProduit">
+    <h2 class="redcol">Pizza Rouge</h2>
+  {% for pizza in red_pizza  %}
+  <div class="df positionPizza">
+    <div class="df">
+      <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+    </div>
+    <div class="df divPizza">
+      <h3 class="miniTitle">{{ pizza.name }}</h3>
+      <p class="posIngredient">{{ pizza.ingredient }}</p>
+    </div>
+    <div class="df divPrix">
+      <h3 class="miniTitle">Prix Moyen</h3>
+      <p class="posPrix">{{ pizza.price }}</p>
+    </div>
+    <div class="df divPrix">
+      <h3 class="miniTitle">Prix Grand</h3>
+      <p class="posPrix">{{ pizza.highPrice }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+  <div class="espacement">
+  </div>
+
+  <div class="df placementProduit">
+    <h2 class="redcol">Pizza Blanche</h2>
+  {% for pizza in white_pizza  %}
+  <div class="df positionPizza">
+    <div class="df">
+      <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+    </div>
+    <div class="df divPizza">
+      <h3 class="miniTitle">{{ pizza.name }}</h3>
+      <p class="posIngredient">{{ pizza.ingredient }}</p>
+    </div>
+    <div class="df divPrix">
+      <h3 class="miniTitle">Prix Moyen</h3>
+      <p class="posPrix">{{ pizza.price }}</p>
+    </div>
+    <div class="df divPrix">
+      <h3 class="miniTitle">Prix Grand</h3>
+      <p class="posPrix">{{ pizza.highPrice }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% for pizza in other_pizza  %}
+
+{% endfor %}
+
+
+
+
+{% endblock %}

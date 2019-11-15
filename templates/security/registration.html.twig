@@ -4,35 +4,54 @@
 <link href="{{asset('css/connexion.css') }}" rel="stylesheet" type="text/css"/>
 
 
-  <div class="df inscription">
-    {{ form_start(form)}}
-    <h2 class="title">Inscription sur le site</h2>
-    <div class="df">
-      <div class="form-group inputDisposition">
-        {{ form_label(form.lastname, 'Nom') }}
-        {{ form_row(form.lastname, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
-      </div>
-
-      <div class="form-group inputDisposition">
-        {{ form_label(form.firstname, 'Prénom') }}
-        {{ form_row(form.firstname, {'label': ' ', 'attr': {'placeholder': 'Prénom ...', 'class': 'form-control'} })}}
-      </div>
+<div class="df inscription"> <!--La div englobant toute l'inscription-->
+  {{ form_start(form)}}
+  <h2 class="title">Inscription sur le site</h2>
+  <div class="df">
+    <div class="form-group inputDisposition">
+      {{ form_label(form.lastname, 'Nom') }}
+      {{ form_row(form.lastname, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
     </div>
     <div class="form-group inputDisposition">
-      {{ form_label(form.mail, 'Email') }}
-      {{ form_row(form.mail, {'label': ' ', 'attr': {'placeholder': 'Adresse mail ...', 'class':'form-control'} })}}
+      {{ form_label(form.firstname, 'Prénom') }}
+      {{ form_row(form.firstname, {'label': ' ', 'attr': {'placeholder': 'Prénom ...', 'class': 'form-control'} })}}
     </div>
-    <div class="form-group inputDisposition">
-      {{ form_label(form.password, 'Mot de passe') }}
-      {{ form_row(form.password, {'label': ' ', 'attr': {'placeholder': 'Mot de passe ... ', 'class':'form-control'} })}}
-    </div>
-    <div class="form-group inputDisposition">
-      {{ form_label(form.confirm_password, 'Confimer votre mot de passe') }}
-      {{ form_row(form.confirm_password, {'label': ' ', 'attr': {'placeholder': 'Répétez votre mot de passe', 'class':'form-control'} })}}
-    </div>
-    <div class="form-group inputDisposition">
-      <button type="submit" class="btn btn-success inscriptionDisposition">Inscription</button>
-    </div>
-    {{form_end(form) }}
   </div>
+  <div class="form-group inputDisposition">
+    {{ form_label(form.mail, 'Email') }}
+    {{ form_row(form.mail, {'label': ' ', 'attr': {'placeholder': 'Adresse mail ...', 'class':'form-control'} })}}
+  </div>
+  <div class="form-group inputDisposition">
+    {{ form_label(form.password, 'Mot de passe') }}
+    {{ form_row(form.password, {'label': ' ', 'attr': {'placeholder': 'Mot de passe ... ', 'class':'form-control'} })}}
+  </div>
+  <div class="form-group inputDisposition">
+    {{ form_label(form.confirm_password, 'Confimer votre mot de passe') }}
+    {{ form_row(form.confirm_password, {'label': ' ', 'attr': {'placeholder': 'Répétez votre mot de passe', 'class':'form-control'} })}}
+  </div>
+  <div class="form-group inputDisposition">
+    <button type="submit" class="btn btn-success inscriptionDisposition">Inscription</button>
+  </div>
+  {{form_end(form) }}
+</div>
+<hr>
+<hr>
+
+<div class="df positionPizza">
+  <div class="df">
+    <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+  </div>
+  <div class="df divPizza">
+    <h3 class="miniTitle">/Nom de la pizza/</h3>
+    <p class="posIngredient">ingredients de la pizza</p>
+  </div>
+  <div class="df divPrix">
+    <h3 class="miniTitle">Prix Moyen</h3>
+    <p class="posPrix">/Prix de la pizza/</p>
+  </div>
+  <div class="df divPrix">
+    <h3 class="miniTitle">Prix Grand</h3>
+    <p class="posPrix">Prix de la pizza</p>
+  </div>
+</div>
 {% endblock %}
