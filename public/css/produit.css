@@ -1,9 +1,25 @@
+.miniTitle { /*les h3 (uniquement dans les partie pizzas)*/
+  font-size: 1.1em;
+}
+
+.highTitle {
+  font-size: 2.5em;
+}
+
+.primaryTitle {
+  text-align: center;
+}
+
+.placementTitle {
+  justify-content: center;
+}
+
 .placementProduit {
   flex-direction: column;
 }
 
 .espacement {
-  margin: 7%;
+  margin: 5%;
 }
 
 .positionPizza {
@@ -19,7 +35,7 @@
   border: white solid;
 }
 
-.posIngredient {
+.posIngredient { /*Positionnement des ingrédients (uniquement pour la partie pizza)*/
   margin: 5% 0 0 0;
 }
 
@@ -33,12 +49,4 @@
 
 .posPrix {
   margin:0 0 0 0;
-}
-
-.miniTitle {
-  font-size: 1.1em;
-}
-
-.highTitle {
-  font-size: 2.5em;
 }

@@ -4,10 +4,15 @@
 <link href="{{asset('css/produit.css') }}" rel="stylesheet" type="text/css"/>
 
 
-<h1 class="redcol highTitle">Nos Pizzas</h1>
+<h1 class="redcol highTitle primaryTitle">Nos Pizzas</h1>
+<div class="df placementTitle">
+  <h3 class="redcol espacement">Lasagne</h3>
+  <h3 class="redcol espacement">Ciabatta</h3>
+  <h3 class="redcol espacement">Déssert</h3>
+</div>
 <div class="df">
   <div class="df placementProduit">
-    <h2 class="redcol">Pizza Rouge</h2>
+    <h2 class="redcol primaryTitle">Pizza Rouge</h2>
     {% for pizza in red_pizza  %}
     <div class="df positionPizza">
       <div class="df">
@@ -33,7 +38,7 @@
   </div>
 
   <div class="df placementProduit">
-    <h2 class="redcol">Pizza Blanche</h2>
+    <h2 class="redcol primaryTitle">Pizza Blanche</h2>
     {% for pizza in white_pizza  %}
     <div class="df positionPizza">
       <div class="df">
@@ -58,7 +63,7 @@
 
 {% for pizza in other_pizza  %}
 <div class="df">
-  <h2 class="redcol">Autre Pizza</h2>
+  <h2 class="redcol primaryTitle">Autre Pizza</h2>
   <div class="df">
     <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
   </div>
