@@ -19,32 +19,38 @@ class ProduitRepository extends ServiceEntityRepository
         parent::__construct($registry, Pizza::class);
     }
 
-    // /**
-    //  * @return Pizza[] Returns an array of Pizza objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByRedPizza() //on recherche ici la valeur rouge qui est dans la colonne sauce
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->where('p.sauce like :val')
+            ->setParameter('val', 'rouge')
+            ->orderBy('p.name', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Pizza
+    public function findByWhitePizza()  //on recherche ici la valeur blanche qui est dans la colonne sauce
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+            ->where('p.sauce like :val')
+            ->setParameter('val', 'blanche')
+            ->orderBy('p.name', 'ASC')
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
+
+    public function findByOtherPizza() //on recherche ici la valeur "vide"" qui est dans la colonne sauce, c'est à dire autre que des pizza rouge ou blanche(exemple: pizza nutella)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.sauce like :val')
+            ->setParameter('val', ' ')
+            ->orderBy('p.name', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 }

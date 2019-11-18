@@ -3,61 +3,128 @@
 {% block body %}
 <link href="{{asset('css/produit.css') }}" rel="stylesheet" type="text/css"/>
 
+
+<h1 class="redcol highTitle">Nos Pizzas</h1>
 <div class="df">
   <div class="df placementProduit">
     <h2 class="redcol">Pizza Rouge</h2>
-  {% for pizza in red_pizza  %}
-  <div class="df positionPizza">
-    <div class="df">
-      <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+    {% for pizza in red_pizza  %}
+    <div class="df positionPizza">
+      <div class="df">
+        <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+      </div>
+      <div class="df divPizza">
+        <h3 class="miniTitle">{{ pizza.name }}</h3>
+        <p class="posIngredient">{{ pizza.ingredient }}</p>
+      </div>
+      <div class="df divPrix">
+        <h3 class="miniTitle">Prix Moyen</h3>
+        <p class="posPrix">{{ pizza.price }}€</p>
+      </div>
+      <div class="df divPrix">
+        <h3 class="miniTitle">Prix Grand</h3>
+        <p class="posPrix">{{ pizza.highPrice }}€</p>
+      </div>
     </div>
-    <div class="df divPizza">
-      <h3 class="miniTitle">{{ pizza.name }}</h3>
-      <p class="posIngredient">{{ pizza.ingredient }}</p>
-    </div>
-    <div class="df divPrix">
-      <h3 class="miniTitle">Prix Moyen</h3>
-      <p class="posPrix">{{ pizza.price }}€</p>
-    </div>
-    <div class="df divPrix">
-      <h3 class="miniTitle">Prix Grand</h3>
-      <p class="posPrix">{{ pizza.highPrice }}€</p>
-    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-  </div>
+
   <div class="espacement">
   </div>
 
   <div class="df placementProduit">
     <h2 class="redcol">Pizza Blanche</h2>
-  {% for pizza in white_pizza  %}
-  <div class="df positionPizza">
-    <div class="df">
-      <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+    {% for pizza in white_pizza  %}
+    <div class="df positionPizza">
+      <div class="df">
+        <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+      </div>
+      <div class="df divPizza">
+        <h3 class="miniTitle">{{ pizza.name }}</h3>
+        <p class="posIngredient">{{ pizza.ingredient }}</p>
+      </div>
+      <div class="df divPrix">
+        <h3 class="miniTitle">Prix Moyen</h3>
+        <p class="posPrix">{{ pizza.price }}€</p>
+      </div>
+      <div class="df divPrix">
+        <h3 class="miniTitle">Prix Grand</h3>
+        <p class="posPrix">{{ pizza.highPrice }}€</p>
+      </div>
     </div>
-    <div class="df divPizza">
-      <h3 class="miniTitle">{{ pizza.name }}</h3>
-      <p class="posIngredient">{{ pizza.ingredient }}</p>
-    </div>
-    <div class="df divPrix">
-      <h3 class="miniTitle">Prix Moyen</h3>
-      <p class="posPrix">{{ pizza.price }}€</p>
-    </div>
-    <div class="df divPrix">
-      <h3 class="miniTitle">Prix Grand</h3>
-      <p class="posPrix">{{ pizza.highPrice }}€</p>
-    </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
   </div>
 </div>
 
 {% for pizza in other_pizza  %}
-
+<div class="df">
+  <h2 class="redcol">Autre Pizza</h2>
+  <div class="df">
+    <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+  </div>
+  <div class="df divPizza">
+    <h3 class="miniTitle">{{ pizza.name }}</h3>
+    <div class="df">
+      <h3 class="miniTitle">Prix Moyen</h3>
+      <p class="posPrix">{{ pizza.price }}€</p>
+    </div>
+    <div class="df">
+      <h3 class="miniTitle">Prix Grand</h3>
+      <p class="posPrix">{{ pizza.highPrice }}€</p>
+    </div>
+  </div>
+</div>
 {% endfor %}
 
+<div>
+  <h2 class="redcol highTitle">Lasagnes</h2>
+{% for product in lasagne %}
+<div class="df">
+  <div class="df placementProduit">
+    {{ product.image }}
+    {{ product.name }}
+  </div>
+</div>
+{% endfor %}
+</div>
 
+<div>
+  <h2 class="redcol highTitle">Ciabattas</h2>
+  {% for product in ciabatta %}
+  <div class="df">
+    <div class="df placementProduit">
+      {{ product.image }}
+      {{ product.name }}
+    </div>
+  </div>
+  {% endfor %}
+  <p>Prix d'un Ciabatta seul: 5</p>
+</div>
 
+  <h2 class="redcol highTitle">Désserts</h2>
+<div>
+  {% for product in dessert %}
+  <div class="df">
+    <div class="df placementProduit">
+      {{ product.image }}
+      {{ product.name }}
+      {{ product.price }}€
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<h2 class="redcol highTitle">Boissons</h2>
+<div class="df">
+  {% for drink in drinks %}
+  <div class="df">
+    <div class="df placementProduit">
+      <p>{{ drink.image }}</p>
+      <p>{{ drink.name }} {{ drink.centiliter }}</p>
+      <p>{{ drink.price }}€</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
 
 {% endblock %}

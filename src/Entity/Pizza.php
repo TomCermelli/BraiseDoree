@@ -26,10 +26,7 @@ class Pizza extends AllProduct
      */
     private $ingredient;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $other;
+
 
 
 
@@ -65,18 +62,6 @@ class Pizza extends AllProduct
     public function setIngredient(string $ingredient): self
     {
         $this->ingredient = $ingredient;
-
-        return $this;
-    }
-
-    public function getOther(): ?bool
-    {
-        return $this->other;
-    }
-
-    public function setOther(bool $other): self
-    {
-        $this->other = $other;
 
         return $this;
     }

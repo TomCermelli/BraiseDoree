@@ -14,7 +14,6 @@
                 <th>Sauce</th>
                 <th>Prix de la petite pizza</th>
                 <th>Prix de la grande pizza</th>
-                <th>Autre (pizza sucrée)</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -28,7 +27,6 @@
                 <td>{{ pizza.sauce }}</td>
                 <td>{{ pizza.price }}</td>
                 <td>{{ pizza.highPrice }}</td>
-                <td>{{ pizza.other ? 'Oui' : 'Non' }}</td>
                 <td>{{ pizza.image }}</td>
                 <td>
                     <a href="{{ path('pizza_show', {'id': pizza.id}) }}">détails</a>
