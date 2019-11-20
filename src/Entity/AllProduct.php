@@ -3,11 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 
  /*
-  *AllProduct
+  * AllProduct
+  * @Vich\Uploadable
   */
 abstract class AllProduct
 {
@@ -32,6 +36,61 @@ abstract class AllProduct
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $image;
+
+    /**
+      *
+      * @Vich\UploadableField(mapping="product_image", fileNameProperty="image")
+      *
+      * @var File
+      */
+    protected $imageFile;
+
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTime
+     */
+    protected $updatedAt;
+
+
+
+    /**
+      * @param null|File
+      *
+      */
+    public function getImageFile(): ?File
+  {
+      return $this->imageFile;
+  }
+
+  /**
+    * @param null|File $imageFile
+    * @return AllProduct
+    */
+    public function setImageFile(?File $imageFile): AllProduct
+    {
+      $this->imageFile = $imageFile;
+
+      if ($this->imageFile instanceof UploadedFile) {
+            $this->updatedAt = new \DateTime('now');
+          }
+      return $this;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function getId(): ?int
     {

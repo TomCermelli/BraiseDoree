@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 
@@ -26,7 +27,9 @@ class PizzaType extends AbstractType
             ])
             ->add('price')
             ->add('highPrice')
-            ->add('image')
+            ->add('imageFile', FileType::class, [
+              'required' => false
+            ])
         ;
     }
 

@@ -16,7 +16,7 @@
     {% for pizza in red_pizza  %}
     <div class="df positionPizza">
       <div class="df">
-        <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
       </div>
       <div class="df divPizza">
         <h3 class="miniTitle">{{ pizza.name }}</h3>
@@ -42,7 +42,7 @@
     {% for pizza in white_pizza  %}
     <div class="df positionPizza">
       <div class="df">
-        <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
       </div>
       <div class="df divPizza">
         <h3 class="miniTitle">{{ pizza.name }}</h3>
@@ -61,11 +61,12 @@
   </div>
 </div>
 
+
+  <h2 class="redcol primaryTitle">La Sucrée</h2>
 {% for pizza in other_pizza  %}
 <div class="df">
-  <h2 class="redcol primaryTitle">Autre Pizza</h2>
   <div class="df">
-    <img src="{{asset('asset/fondHome.jpeg')}}" alt="Devanture de la pizzeria" width="280px" height="150px">
+    <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
   </div>
   <div class="df divPizza">
     <h3 class="miniTitle">{{ pizza.name }}</h3>
@@ -86,7 +87,7 @@
 {% for product in lasagne %}
 <div class="df">
   <div class="df placementProduit">
-    {{ product.image }}
+  <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="280px" height="150px">
     {{ product.name }}
   </div>
 </div>
@@ -98,7 +99,7 @@
   {% for product in ciabatta %}
   <div class="df">
     <div class="df placementProduit">
-      {{ product.image }}
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="280px" height="150px">
       {{ product.name }}
     </div>
   </div>
@@ -111,7 +112,7 @@
   {% for product in dessert %}
   <div class="df">
     <div class="df placementProduit">
-      {{ product.image }}
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="280px" height="150px">
       {{ product.name }}
       {{ product.price }}€
     </div>
@@ -124,7 +125,7 @@
   {% for drink in drinks %}
   <div class="df">
     <div class="df placementProduit">
-      <p>{{ drink.image }}</p>
+      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="280px" height="150px">
       <p>{{ drink.name }} {{ drink.centiliter }}</p>
       <p>{{ drink.price }}€</p>
     </div>
