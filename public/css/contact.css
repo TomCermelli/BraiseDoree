@@ -1,0 +1,25 @@
+.placementElem {
+  display: flex;
+  justify-content: space-around;
+}
+
+.adresse {
+  display: flex;
+  flex-direction: column;
+}
+
+.adresseTitle {
+  text-align: center;
+}
+
+.adresseInfo {
+  text-align: center;
+}
+
+.labelDisposition {
+  margin: 500px 0 0 0;
+}
+
+.inputDisposition {
+  margin: 2%;
+}
