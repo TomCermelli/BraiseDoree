@@ -13,8 +13,11 @@ Installation:
 •composer install
 •php bin/console doctrine:schema:update --force
 
-Bundle utilisé
+
+
+Bundles utilisés:
 
 •SwiftMailer *
 •Validator *
-•Security
+•Security *
+•VichUploaderBundle *

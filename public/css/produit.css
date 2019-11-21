@@ -1,36 +1,61 @@
 .miniTitle { /*les h3 (uniquement dans les partie pizzas)*/
   font-size: 1.1em;
+  margin: 10px 3px 0 3px;
 }
 
 .highTitle {
   font-size: 2.5em;
+  text-align: center;
 }
+
+
+.ancrage { /*lien perméttant de se déplacer instantanément au gros titre correspondant*/
+
+}
+
 
 .primaryTitle {
   text-align: center;
 }
 
+.shortcut {
+  display: flex;
+  justify-content: center;
+}
+
 .placementTitle {
+  display: flex;
+
   justify-content: center;
 }
 
 .placementProduit {
+  display: flex;
   flex-direction: column;
+  margin: 0 2% 0 4%;
 }
 
-.espacement {
-  margin: 5%;
+.allPizza {
+  display: flex;
 }
 
-.positionPizza {
+.positionPizza { /**/
+  display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0 0;
-  /*width: 38%;*/
+  margin: 5% 0 5% 0;
+  max-height: 20%;
 }
 
-.divPizza {
-  /*width: 20%;*/
+.imgPizza {
+  display:flex;
+}
+
+
+.divPizza {/*div principale du prix regroupant le titre et les ingrédients assocciés à la pizza*/
+  width: 43%;
+  min-height: 50%;
   text-align: center;
+  display: flex;
   flex-direction: column;
   border: white solid;
 }
@@ -39,14 +64,47 @@
   margin: 5% 0 0 0;
 }
 
-.divPrix{
-  /*width: 7%;*/
+.divPrix{ /*div principale du prix regroupant le titre et le prix assoccié à la pizza*/
+  display: flex;
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
-  border: white solid;
+  border: white 0.1em solid ;
 }
 
-.posPrix {
-  margin:0 0 0 0;
+.posPrix { /*position du prix de la pizza*/
+  margin: 25% 0 25% 0;
+}
+
+.autrePizza { /*Autre que pizza blanche et rouge ( Nutella )*/
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.autrePrix {
+  display: flex;
+}
+
+.autreProduit {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2% 0 4%;
+}
+
+
+.produitTypePlacement {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divSeparation {
+  margin:2%;
+}
+
+.nomProduit {
+  text-align: center;
+  font-size: 1.5em;
 }
