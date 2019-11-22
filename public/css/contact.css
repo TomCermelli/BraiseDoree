@@ -1,25 +1,40 @@
-.placementElem {
+.placementElem { /*Permet de placer l'adresse à gauche et le contact à droite*/
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.adresse {
+.adresse { /*La div de l'adresse*/
   display: flex;
   flex-direction: column;
 }
 
-.adresseTitle {
+.adresseTitle { /*Le titre, "Adresse"*/
   text-align: center;
 }
 
-.adresseInfo {
+.adresseInfo { /*Adresse complète + numéro de téléphone*/
   text-align: center;
 }
 
-.labelDisposition {
+.divContact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactTitle { /*Le titre, "Contact"*/
+  text-align: center;
+}
+
+
+.labelDisposition { /*Disposition des labels dans le formulaire contact*/
   margin: 500px 0 0 0;
 }
 
-.inputDisposition {
+.inputDisposition { /*Disposition des champs*/
   margin: 2%;
+}
+
+.boutonSubmit {
+
 }

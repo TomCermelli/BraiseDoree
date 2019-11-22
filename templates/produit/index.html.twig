@@ -2,14 +2,22 @@
 
 {% block body %}
 <link href="{{asset('css/produit.css') }}" rel="stylesheet" type="text/css"/>
-
+<!--Descriptif des classes dans le fichier css correspondant-->
 
 <h1 class="redcol highTitle primaryTitle">Nos Pizzas</h1>
-<div class="shortcut">
-  <h3 class="ancrage"><a href="#lasagne" class="redcol">Lasagnes</a></h3>
-  <h3 class="ancrage"><a href="#ciabatta" class="redcol">Ciabattas</a></h3>
-  <h3 class="ancrage"><a href="#boisson" class="redcol">Boissons</a></h3>
-  <h3 class="ancrage"><a href="#dessert" class="redcol">Désserts</a></h3>
+<div class="shortcut linkDecoration">
+  <div class="ancrage">
+  <h3 class=""><a href="#lasagne" class="redcol nav-link colLink">Lasagnes</a></h3>
+</div>
+  <div class="ancrage">
+  <h3 class=""><a href="#ciabatta" class="redcol nav-link colLink">Ciabattas</a></h3>
+</div>
+  <div class="ancrage">
+  <h3 class=""><a href="#boisson" class="redcol nav-link colLink">Boissons</a></h3>
+</div>
+  <div class="ancrage">
+  <h3 class=""><a href="#dessert" class="redcol nav-link colLink">Désserts</a></h3>
+</div>
 </div>
 <div class="allPizza">
   <div class="placementProduit">
@@ -17,6 +25,7 @@
     {% for pizza in red_pizza  %}
     <div class="positionPizza">
       <div class="imgPizza">
+        <!--Route de l'image du produit via VichUploaderBundle-->
         <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
       </div>
       <div class="divPizza">
@@ -87,21 +96,26 @@
 {% for product in lasagne %}
 <div class="divSeparation">
   <div class="placementProduit">
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
       <p class="nomProduit">{{ product.name }}</p>
-      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="280px" height="150px">
   </div>
 </div>
 {% endfor %}
 </div>
 
 <h2 class="redcol highTitle" id="ciabatta">Ciabattas</h2>
-<p class="highTitle">ON VA METTRE LES PRIX ICI</p>
+<p class="">Ciabatta seul : 4.5€
+  <br> Ciabatta + Boisson : 5.5€
+  <br> Formule Ciabatta <br> + Boisson 33cl +dessert : 7.5€
+
+
+</p>
 <div class="produitTypePlacement">
   {% for product in ciabatta %}
   <div class="divSeparation">
     <div class="placementProduit">
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
       <p class="nomProduit">{{ product.name }}</p>
-      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="280px" height="150px">
     </div>
   </div>
   {% endfor %}
@@ -109,13 +123,17 @@
 
 
 <h2 class="redcol highTitle" id="boisson">Boissons</h2>
-<p class="highTitle">ON VA METTRE LES PRIX ICI</p>
 <div class="produitTypePlacement">
   {% for drink in drinks %}
   <div class="divSeparation">
     <div class="placementProduit">
-      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="280px" height="150px">
-      <p>{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
+      {% if drink.name == "Caprisun, Fruit shoot" %}
+        <span class=""><img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px"></span>
+        <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
+      {% else %}
+        <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
+        <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
+      {% endif %}
     </div>
   </div>
 {% endfor %}
@@ -130,8 +148,8 @@
   {% for product in dessert %}
   <div class="divSeparation">
     <div class="placementProduit">
-      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="280px" height="150px">
-      <p>{{ product.name }} à {{ product.price }}€</p>
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
+      <p class="nomProduit">{{ product.name }} à {{ product.price }}€</p>
     </div>
   </div>
   {% endfor %}

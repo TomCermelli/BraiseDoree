@@ -13,13 +13,13 @@
       <ul class="nav txtac navPos"> <!--Nav utilisant bootstrap-->
         <div class="dff">
           <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-            <a class="nav-link redcol" href="/">Accueil</a>
+            <a class="nav-link redcol colLink" href="/">Accueil</a>
           </li>
           <li class="nav-item headerLeft">
-            <a class="nav-link redcol" href="/formules">Nos formules</a>
+            <a class="nav-link redcol colLink" href="/formules">Nos formules</a>
           </li>
           <li class="nav-item headerLeft">
-            <a class="nav-link redcol" href="/produit">Nos produits</a>
+            <a class="nav-link redcol colLink" href="/produit">Nos produits</a>
           </li>
         </div>
         <div class="dff">
@@ -31,27 +31,27 @@
         </div>
         <div class="dff">
           <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-            <a class="nav-link redcol" href="/contact">Contact</a>
+            <a class="nav-link redcol colLink" href="/contact">Contact</a>
           </li>
           {% if is_granted('ROLE_USER') %}
             <li class="nav-item headerRight">
-              <a class="nav-link redcol" href="#"><i class="fas fa-shopping-cart"></i></a> <!--Icône du panier-->
+              <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a> <!--Icône du panier-->
             </li>
           {% endif %}
 
           {% if not app.user %}
             <li class="nav-item headerRight">
-              <a class="nav-link redcol" href="/connexion">Connexion</a>
+              <a class="nav-link redcol colLink" href="/connexion">Connexion</a>
             </li>
           {% else %}
             <li class="nav-item headerRight">
-              <a class="nav-link redcol" href="{{ path('security_logout') }}">Déconnexion</a>
+              <a class="nav-link redcol colLink" href="{{ path('security_logout') }}">Déconnexion</a>
             </li>
           {% endif %}
 
           {% if is_granted('ROLE_ADMIN') %}
             <li class="nav-item headerRight">
-              <a class="nav-link redcol" href="/admin">Admin</a>
+              <a class="nav-link redcol colLink" href="/admin">Admin</a>
             </li>
           {% endif %}
         </div>

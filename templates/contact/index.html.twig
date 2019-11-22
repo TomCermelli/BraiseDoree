@@ -17,14 +17,21 @@
 
   <div class="df">
     <div class="adresse">
-      <h3 class="adresseTitle">Adresse</h3>
+      <h3 class="redcol adresseTitle">Adresse</h3>
       <p class="adresseInfo">36 Avenue du Professeur Grasset</p>
       <p class="adresseInfo">34090 Montpellier</p>
       <p class="adresseInfo">Tel : 06 43 59 16 34</p>
+      <div style="width: 650px">
+        <iframe width="650" height="500" src="https://maps.google.com/maps?width=720&amp;height=500&amp;hl=en&amp;q=36%20Avenue%20du%20Professeur%20Grasset%2C%20Montpellier+(La%20Braise%20Dor%C3%A9e)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          <a href="https://www.maps.ie/coordinates.html">latitude longitude finder</a>
+        </iframe>
+      </div>
+      <br />
     </div>
   </div>
 
-  <div id="contactForm" class="df">
+  <div id="contactForm" class="divContact">
+    <h3 class="redcol contactTitle">Contact</h3>
     {{form_start(form)}}
     <div class="df">
       <div class="form-group inputDisposition">
@@ -49,7 +56,7 @@
     {{ form_label(form.message, 'Message') }}
     {{form_row(form.message, {'label': ' ', 'attr': {'placeholder': 'Ecrivez votre message ...', 'class': 'form-control'} })}}
     <div>
-      <input type="submit" id="submit" name="submit" value="Envoyer">
+      <input class="boutonSubmit" type="submit" id="submit" name="submit" value="Envoyer">
     </div>
     {{form_end(form)}}
   </div>

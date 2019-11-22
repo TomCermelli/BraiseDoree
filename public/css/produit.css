@@ -3,29 +3,29 @@
   margin: 10px 3px 0 3px;
 }
 
-.highTitle {
+.highTitle { /*les autres h3 (Ciabattas, Lasagnes, Désserts ...)*/
   font-size: 2.5em;
   text-align: center;
 }
 
 
 .ancrage { /*lien perméttant de se déplacer instantanément au gros titre correspondant*/
-
+  display:flex;
+  margin: 2% 2% 8% 2% ;
 }
 
 
-.primaryTitle {
+.primaryTitle { /*le h1 et les h2, regroupant tout les gros titres */
   text-align: center;
 }
 
-.shortcut {
+.shortcut { /*Div des plusieurs liens d'ancrages perméttants un déplacement rapide sur la page*/
   display: flex;
   justify-content: center;
 }
 
-.placementTitle {
+.placementTitle { /**/
   display: flex;
-
   justify-content: center;
 }
 
@@ -35,7 +35,7 @@
   margin: 0 2% 0 4%;
 }
 
-.allPizza {
+.allPizza { /*Div regroupant les 3 types de pizzas*/
   display: flex;
 }
 
@@ -83,11 +83,11 @@
   flex-direction: column;
 }
 
-.autrePrix {
+.autrePrix { /*Prix des pizzas dans la catégorie "Sucrée"*/
   display: flex;
 }
 
-.autreProduit {
+.autreProduit { /**/
   display: flex;
   flex-wrap: wrap;
   margin: 0 2% 0 4%;
@@ -100,11 +100,11 @@
   justify-content: center;
 }
 
-.divSeparation {
+.divSeparation { /*Espace entre chaque produit*/
   margin:2%;
 }
 
-.nomProduit {
+.nomProduit { /*Text sous l'image des produits autres que les pizzas*/
   text-align: center;
   font-size: 1.5em;
 }
