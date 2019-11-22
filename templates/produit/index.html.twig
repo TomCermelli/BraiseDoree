@@ -131,7 +131,7 @@
         <span class=""><img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px"></span>
         <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
       {% else %}
-        <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
+        <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="150px">
         <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
       {% endif %}
     </div>
