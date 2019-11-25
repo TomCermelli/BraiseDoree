@@ -5,5 +5,15 @@
     {{ form_row(form.price) }}
     {{ form_row(form.highPrice) }}
     {{ form_row(form.imageFile) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+
+
+    {{form_end(form)}}
+
+
+
+
+
+
+    <button class="btn whitecol">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

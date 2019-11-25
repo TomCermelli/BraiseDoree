@@ -57,7 +57,6 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  border: white solid;
 }
 
 .posIngredient { /*Positionnement des ingrédients (uniquement pour la partie pizza)*/
@@ -69,7 +68,6 @@
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
-  border: white 0.1em solid ;
 }
 
 .posPrix { /*position du prix de la pizza*/

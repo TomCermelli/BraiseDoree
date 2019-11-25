@@ -8,31 +8,31 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ drink.id }}</td>
+                <th class="redcol">Id</th>
+                <td class="whitecol">{{ drink.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
-                <td>{{ drink.name }}</td>
+                <th class="redcol">Name</th>
+                <td class="whitecol">{{ drink.name }}</td>
             </tr>
             <tr>
-                <th>Price</th>
-                <td>{{ drink.price }}</td>
+                <th class="redcol">Price</th>
+                <td class="whitecol">{{ drink.price }}</td>
             </tr>
             <tr>
-                <th>Centiliter</th>
-                <td>{{ drink.centiliter }}</td>
+                <th class="redcol">Centiliter</th>
+                <td class="whitecol">{{ drink.centiliter }}</td>
             </tr>
             <tr>
-                <th>Image</th>
-                <td>{{ drink.image }}</td>
+                <th class="redcol">Image</th>
+                <td class="whitecol">{{ drink.image }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('drink_index') }}">back to list</a>
+    <a class="colLink" href="{{ path('drink_index') }}">back to list</a>
 
-    <a href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
+    <a class="colLink" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
 
     {{ include('drink/_delete_form.html.twig') }}
 {% endblock %}

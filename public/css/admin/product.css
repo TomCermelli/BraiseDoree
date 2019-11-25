@@ -1,0 +1,30 @@
+.placementForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titrePrincipal {
+  display: flex;
+  justify-content: center;
+}
+
+.inputDisposition {
+  margin: 0 5% 0 5%;
+}
+
+.labelDisposition{
+  padding: 30px 0 0 0;
+}
+
+.formDisposition {
+  margin: -30px 0 8% 0;
+}
+
+.imageDisposition {
+  padding: 4.5% 0 5% 8%;
+}
+
+.buttonSize {
+  font-size: 1.1em;
+}

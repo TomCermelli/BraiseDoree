@@ -3,11 +3,69 @@
 {% block title %}Edit Pizza{% endblock %}
 
 {% block body %}
-    <h1>Edit Pizza</h1>
+<link href="{{asset('css/admin/pizza.css') }}" rel="stylesheet" type="text/css"/>
 
-    {{ include('pizza/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('pizza_index') }}">back to list</a>
+<div class="placementForm">
+  <div>
+    <div>
+      <h1 class="redcol titrePrincipal">Edit une Pizza</h1>
+    </div>
+    {{form_start(form)}}
 
-    {{ include('pizza/_delete_form.html.twig') }}
+    <div class="df">
+      <div class="form-group inputDisposition">
+        <div class="labelDisposition">
+          {{ form_label(form.name, 'Nom') }}
+        </div>
+        <div class="formDisposition">
+          {{form_row(form.name, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+      <div class="form-group inputDisposition">
+        <div class="form-group sauce">
+          {{ form_label(form.sauce, 'Sauce') }}
+        </div>
+        <div class="formDisposition">
+          {{form_row(form.sauce, {'label': ' ', 'attr': {'placeholder': 'Sauce ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group inputDisposition">
+      <div class="labelDisposition">
+        {{ form_label(form.ingredient, 'Ingrédients') }}
+      </div>
+      <div class="formDisposition">
+        {{form_row(form.ingredient, {'label': ' ', 'attr': {'placeholder': 'Ingrédients ...', 'class': 'form-control'} })}}
+      </div>
+    </div>
+
+    <div class="df">
+      <div class="form-group inputDisposition">
+        <div class="labelDisposition">
+          {{ form_label(form.price, 'Prix Moyen') }}
+        </div>
+        <div class="formDisposition">
+          {{form_row(form.price, {'label': ' ', 'attr': {'placeholder': 'Prix Moyens ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+      <div class="form-group inputDisposition">
+        <div class="labelDisposition">
+          {{ form_label(form.highPrice, 'Prix Grands') }}
+        </div>
+        <div class="formDisposition">
+          {{form_row(form.highPrice, {'label': ' ', 'attr': {'placeholder': 'Prix Grands ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+    </div>
+
+    <div class="inputDisposition">
+      {{ form_row(form.imageFile) }}
+      <button class="btn redcol buttonSize">{{ button_label|default('Sauvegarder') }}</button>
+      <a class="colLink" href="{{ path('pizza_index') }}">back to list</a>
+    </div>
+    {{form_end(form)}}
+  </div>
+</div>
 {% endblock %}

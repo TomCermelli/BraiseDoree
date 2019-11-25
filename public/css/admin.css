@@ -1,0 +1,10 @@
+.creationList {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.placementList {
+  justify-content: center;
+  margin: 7% 0 0 0;
+}

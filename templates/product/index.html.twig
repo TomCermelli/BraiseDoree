@@ -7,10 +7,10 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Type</th>
+            <tr class="redcol">
                 <th>Id</th>
                 <th>Name</th>
+                <th>Type</th>
                 <th>Price</th>
                 <th>Image</th>
                 <th>actions</th>
@@ -18,15 +18,15 @@
         </thead>
         <tbody>
         {% for product in products %}
-            <tr>
-                <td>{{ product.type }}</td>
-                <td>{{ product.id }}</td>
+            <tr class="whitecol">
+                <td class="redcol">{{ product.id }}</td>
                 <td>{{ product.name }}</td>
+                <td>{{ product.type }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.image }}</td>
                 <td>
-                    <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                    <a class="colLink" href="{{ path('product_show', {'id': product.id}) }}">show</a>
+                    <a class="colLink" href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('product_new') }}">Create new</a>
+    <a class="colLink" href="{{ path('product_new') }}">Create new</a>
 {% endblock %}

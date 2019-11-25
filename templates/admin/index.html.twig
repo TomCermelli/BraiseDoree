@@ -3,17 +3,17 @@
 
 {% block title %}{% endblock %}
 {% block body %}
-<link href="{{asset('css/home.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{asset('css/admin.css') }}" rel="stylesheet" type="text/css"/>
 
-<div class="df">
-  <li class=""> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-    <a class="redcol" href="/admin/pizza">Crée une pizza</a>
+<div class="creationList">
+  <li class="df placementList"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
+    <a class=" colLink" href="/admin/pizza">Crée une pizza</a>
   </li>
-  <li class="">
-    <a class="redcol" href="/admin/otherproduct">Crée un produit (lasagne,ciabatta,déssert)</a>
+  <li class="df placementList">
+    <a class=" colLink" href="/admin/otherproduct">Crée un produit (autre que pizza)</a>
   </li>
-  <li class="">
-    <a class="redcol" href="/admin/drink">Crée une boisson</a>
+  <li class="df placementList">
+    <a class=" colLink" href="/admin/drink">Crée une boisson</a>
   </li>
 </div>
 {% endblock %}

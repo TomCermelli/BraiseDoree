@@ -9,7 +9,11 @@
   color: #ed000b;
 }
 
-.colLink:hover {
+.whitecol { /* couleur réservé pour les infos de tout les produits(uniquement dans leur page de création/edit/etc...)*/
+  color:white;
+}
+
+.colLink:hover { /*Au survol des liens, on leurs change leurs couleurs en blancs*/
   color: white;
 }
 
@@ -17,8 +21,8 @@
   min-height: 898px;
 }
 
-.title {
-  font-size:
+.logo {
+  text-decoration: none;
 }
 
 .headerLeft { /*Navigateur à gauche du logo*/
