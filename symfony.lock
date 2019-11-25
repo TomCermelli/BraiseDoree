@@ -462,6 +462,9 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/twig-pack": {
+        "version": "v1.0.0"
+    },
     "symfony/validator": {
         "version": "4.3",
         "recipe": {
@@ -509,6 +512,9 @@
     },
     "symfony/yaml": {
         "version": "v4.3.6"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.0.0"
     },
     "twig/twig": {
         "version": "v2.12.1"
