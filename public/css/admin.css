@@ -1,10 +1,14 @@
-.creationList {
+.creationList { /*Position de la div comprenant les listes*/
   display: flex;
   flex-direction: column;
 
 }
 
-.placementList {
+.placementList { /*Disposition des listes de création*/
   justify-content: center;
   margin: 7% 0 0 0;
+}
+
+.mainTitle {
+  text-align: center;
 }

@@ -1,6 +1,6 @@
 .baseContainer {
-  background-color: black;
-  background-size: cover;
+
+   background-image: radial-gradient(circle at top left, black, black ,rgb(10, 0, 0) 70%, rgb(23, 0, 0) 80% );
   font-size:1.2em ;
   color: white;
 }

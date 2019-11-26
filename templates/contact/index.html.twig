@@ -1,9 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block page_title %}
+La Braise Dorée - Contactez-nous
+{% endblock %}
 
+{% block page_metadata %}
+
+<meta charset="utf-8" name="description" content="Contactez-nous si vous avez des questions quel-qu’elle soit sur notre entreprise/produit/service, vous retrouverez ses informations ci-dessous." />
+{% endblock %}
 {% block body %}
+<!--Le titre est essentielle pour le référencement, on y met nos mots clés qui seront présentes sur notre page-->
 <link href="{{asset('css/contact.css') }}" rel="stylesheet" type="text/css"/>
+<!--Descriptif des classes dans le fichier css correspondant-->
+
+
 
 {% for message in app.flashes('success') %}
 <div class="alert alert-success">
@@ -12,54 +22,81 @@
 </div>
 {% endfor %}
 
+<div class="mainInfoDisposition">
+  <h1 class="redcol">Contactez-nous</h1>
+  <p class="mainTitleInfo">Vous avez des questions, besoins de renseignements, n'hésitez pas à nous contacter pour toutes demandes soit grâce au formulaire de contact, soit grâce à notre numéro de téléphone</p>
+</div>
+
 
 <div class="placementElem">
 
   <div class="df">
     <div class="adresse">
-      <h3 class="redcol adresseTitle">Adresse</h3>
-      <p class="adresseInfo">36 Avenue du Professeur Grasset</p>
-      <p class="adresseInfo">34090 Montpellier</p>
-      <p class="adresseInfo">Tel : 06 43 59 16 34</p>
-      <div style="width: 650px">
-        <iframe width="650" height="500" src="https://maps.google.com/maps?width=720&amp;height=500&amp;hl=en&amp;q=36%20Avenue%20du%20Professeur%20Grasset%2C%20Montpellier+(La%20Braise%20Dor%C3%A9e)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-          <a href="https://www.maps.ie/coordinates.html">latitude longitude finder</a>
-        </iframe>
+      <h2 class="redcol adresseTitle">Adresse</h3>
+        <p class="adresseInfo">36 Avenue du Professeur Grasset</p>
+        <p class="adresseInfo">34090 Montpellier</p>
+        <p class="adresseInfo">Tel : 06 43 59 16 34</p>
+        <div style="width: 650px">
+          <iframe width="650" height="500" src="https://maps.google.com/maps?width=720&amp;height=500&amp;hl=en&amp;q=36%20Avenue%20du%20Professeur%20Grasset%2C%20Montpellier+(La%20Braise%20Dor%C3%A9e)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            <a href="https://www.maps.ie/coordinates.html">latitude longitude finder</a>
+          </iframe>
+        </div>
+        <br />
       </div>
-      <br />
     </div>
-  </div>
 
-  <div id="contactForm" class="divContact">
-    <h3 class="redcol contactTitle">Contact</h3>
-    {{form_start(form)}}
-    <div class="df">
-      <div class="form-group inputDisposition">
-        {{ form_label(form.lastname, 'Nom') }}
-        {{form_row(form.lastname, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
+    <div id="contactForm" class="divContact">
+      <h2 class="redcol contactTitle">Formulaire de contact</h2>
+      {{form_start(form)}}
+      <div class="df">
+        <div class="directionElem">
+          <div class="labelDisposition">
+            {{ form_label(form.lastname, 'Nom') }}
+          </div>
+          <div class="form-group inputDisposition">
+            {{form_row(form.lastname, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
+          </div>
+        </div>
+        <div class="directionElem">
+          <div class="labelDisposition">
+            {{ form_label(form.firstname, 'Prénom') }}
+          </div>
+          <div class="form-group inputDisposition">
+            {{form_row(form.firstname, {'label': ' ', 'attr': {'placeholder': 'Prénom ...', 'class': 'form-control'} })}}
+          </div>
+        </div>
       </div>
-      <div class="form-group inputDisposition">
-        {{ form_label(form.firstname, 'Prénom') }}
-        {{form_row(form.firstname, {'label': ' ', 'attr': {'placeholder': 'Prénom ...', 'class': 'form-control'} })}}
+      <div class="df">
+        <div class="directionElem">
+          <div class="labelDisposition">
+            {{ form_label(form.subject, 'Sujet') }}
+          </div>
+          <div class="form-group inputDisposition">
+            {{form_row(form.subject, {'label': ' ', 'attr': {'placeholder': 'Sujet ...', 'class': 'form-control'} })}}
+          </div>
+        </div>
+        <div class="directionElem">
+          <div class="labelDisposition">
+            {{ form_label(form.email, 'Email') }}
+          </div>
+          <div class="form-group inputDisposition">
+            {{form_row(form.email, {'label': ' ', 'attr': {'placeholder': 'Email ...', 'class': 'form-control'} })}}
+          </div>
+        </div>
       </div>
+      <div class="df directionElem">
+        <div class="labelDisposition">
+          {{ form_label(form.message, 'Message') }}
+        </div>
+        <div class="form-group inputDisposition">
+          {{form_row(form.message, {'label': ' ', 'attr': {'placeholder': 'Ecrivez votre message ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+      <div class="">
+        <input class="boutonSubmit btn" type="submit" id="submit" name="submit" value="Envoyer">
+      </div>
+      {{form_end(form)}}
     </div>
-    <div class="df">
-      <div class="form-group inputDisposition">
-        {{ form_label(form.subject, 'Sujet') }}
-        {{form_row(form.subject, {'label': ' ', 'attr': {'placeholder': 'Sujet ...', 'class': 'form-control'} })}}
-      </div>
-      <div class="form-group inputDisposition">
-        <span class="labelDisposition">{{ form_label(form.email, 'Email') }}</span>
-        {{form_row(form.email, {'label': ' ', 'attr': {'placeholder': 'Email ...', 'class': 'form-control'} })}}
-      </div>
-    </div class="df">
-    {{ form_label(form.message, 'Message') }}
-    {{form_row(form.message, {'label': ' ', 'attr': {'placeholder': 'Ecrivez votre message ...', 'class': 'form-control'} })}}
-    <div>
-      <input class="boutonSubmit" type="submit" id="submit" name="submit" value="Envoyer">
-    </div>
-    {{form_end(form)}}
-  </div>
 
-</div>
+  </div>
 {% endblock %}

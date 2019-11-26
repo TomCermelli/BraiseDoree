@@ -4,12 +4,16 @@
   justify-content: space-around;
 }
 
+.directionElem { /*Permet de mettre le label au dessu du bouton*/
+  flex-direction: column;
+}
+
 .adresse { /*La div de l'adresse*/
   display: flex;
   flex-direction: column;
 }
 
-.adresseTitle { /*Le titre, "Adresse"*/
+.adresseTitle { /*Le titre, "Adresse", placement au centre de sa div*/
   text-align: center;
 }
 
@@ -17,24 +21,58 @@
   text-align: center;
 }
 
-.divContact {
+.divContact { /*la div comprenant toute les infos du contact + la carte google map*/
   display: flex;
   flex-direction: column;
 }
 
-.contactTitle { /*Le titre, "Contact"*/
+.contactTitle { /*Le titre, "Contact", placement au centre de sa div*/
   text-align: center;
+  margin: 0 0 25% 0;
 }
 
 
 .labelDisposition { /*Disposition des labels dans le formulaire contact*/
-  margin: 500px 0 0 0;
+  margin: 3%;
 }
 
 .inputDisposition { /*Disposition des champs*/
-  margin: 2%;
+  margin: -10% 3% 5% 3%;
 }
 
-.boutonSubmit {
+.mainInfoDisposition { /*Disposition du h1 et de son texte*/
+  text-align: center;
+  margin: 2% 0 5% 0;
+}
 
+.mainTitleInfo { /*Le texte sous le h1, pour l'espacement entre le titre et le texte*/
+  padding: 0 35% 0 35%;
+  margin: 1% 0 0 0;
+  line-height: 1.9em;
+}
+
+
+.boutonSubmit { /*Placement du bouton submit*/
+  margin: 5% 0 0 77%;
+  border-radius: 25%;
+  width: 85px;
+  height: 30px;
+
+}
+
+.btn{ /*Concerne le boutton submit, class pour toute la décoration du bouton*/
+  border:none;
+	padding:6px 0 6px 0;
+	border-radius:8px;
+	background:red;
+	font:bold 13px Arial;
+  color:white;
+
+}
+
+.btn:hover {
+  color:black;
+  background:white;
+  border: solid 1px black;
+  border-radius:8px;
 }

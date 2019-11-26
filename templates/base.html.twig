@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>{% block title %}Welcome!{% endblock %}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="{{asset('css/base.css') }}" rel="stylesheet" type="text/css"/>
-  {% block stylesheets %}{% endblock %}
-</head>
+{% extends 'head.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="{{asset('css/base.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block basebody %}
+<!--Descriptif des classes dans le fichier css correspondant-->
 <body>
   <div class="baseContainer"> <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
     <header>
@@ -34,25 +33,25 @@
             <a class="nav-link redcol colLink" href="/contact">Contact</a>
           </li>
           {% if is_granted('ROLE_USER') %}
-            <li class="nav-item headerRight">
-              <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a> <!--Icône du panier-->
-            </li>
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a> <!--Icône du panier-->
+          </li>
           {% endif %}
 
           {% if not app.user %}
-            <li class="nav-item headerRight">
-              <a class="nav-link redcol colLink" href="/connexion">Connexion</a>
-            </li>
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol colLink" href="/connexion">Connexion</a>
+          </li>
           {% else %}
-            <li class="nav-item headerRight">
-              <a class="nav-link redcol colLink" href="{{ path('security_logout') }}">Déconnexion</a>
-            </li>
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol colLink" href="{{ path('security_logout') }}">Déconnexion</a>
+          </li>
           {% endif %}
 
           {% if is_granted('ROLE_ADMIN') %}
-            <li class="nav-item headerRight">
-              <a class="nav-link redcol colLink" href="/admin">Admin</a>
-            </li>
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol colLink" href="/admin">Admin</a>
+          </li>
           {% endif %}
         </div>
       </ul>
@@ -89,4 +88,4 @@
     {% block javascripts %}{% endblock %}
   </div>
 </body>
-</html>
+{% endblock %}

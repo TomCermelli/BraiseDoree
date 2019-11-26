@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<!--Mise en place de titre et méta personnalisé pour le SEO-->
+<!--Petit rappel pour un reférencement de base:
+•Longueur de moins de 512 pixels soit environ 55 caractères pour la plupart des titres rédigés
+Dois cibler un mot ou une expression clé différent à chaque fois
+•Le mot ou l’expression doit si possible se situer en début de phrase
+•Le titre doit être cohérent et doit avoir un lien avec le contenu de la page en question
+•Le titre doit être accrocheur et faire cliquer l’internaute-->
+<head>
+  {% if block('page_title') is defined %} <!--Cette condition permet d'écrire un title sur toute les pages utilisant les extends, on écrit par dessus à chaque page-->
+    <title>{{ block('page_title')|raw }}</title>
+  {% else %}
+    <title>La Braise Dorée</title> <!--On met un titre par défault si jamais il y a un oublie sur une page-->
+  {% endif %}
+
+  {% if block('page_metadata') is defined %} <!--Ici on défini le meta que l'on va utiliser pour le SEO (la description sous le texte )-->
+    {{ block('page_metadata'|raw) }}
+  {% else %}
+    <meta charset="UTF-8"/> <!--Il faut au moin le charset pour éviter que des caractères spéciaux ne s'affiche pas-->
+  {% endif %}
+
+  {% block stylesheets %}{% endblock %} <!--le style de la base.html.twig-->
+</head>
+
+
+{% block basebody %}{% endblock %}<!--Le contenu de la page base.html.twig-->
+</html>
