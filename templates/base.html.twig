@@ -5,54 +5,64 @@
 <link href="{{asset('css/base.css') }}" rel="stylesheet" type="text/css"/>
 {% endblock %}
 {% block basebody %}
-<!--Descriptif des classes dans le fichier css correspondant-->
+<!--Descriptif des classes dans le fichier css correspondant (css/base.css)-->
 <body>
   <div class="baseContainer"> <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
     <header>
       <ul class="nav txtac navPos"> <!--Nav utilisant bootstrap-->
-        <div class="dff">
+        <div class="df divHeaderGauche">
           <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-            <a class="nav-link redcol colLink" href="/">Accueil</a>
+            <a class="nav-link redcol colLink linkUnderline" href="/">Accueil</a>
           </li>
           <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink" href="/formules">Nos formules</a>
+            <a class="nav-link redcol colLink linkUnderline" href="/formules">Nos formules</a>
           </li>
           <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink" href="/produit">Nos produits</a>
+            <a class="nav-link redcol colLink linkUnderline" href="/produit">Nos produits</a>
           </li>
         </div>
-        <div class="dff">
-          <li class="nav-item">
-            <a class="nav-link logo" href="/">
+
+        <div class="logo">
+          <li>
+            <a href="/">
               <img src="{{asset('asset/logo.png')}}" alt="Logo de la BraiseDorée" width="300px" height="150px">
             </a>
           </li>
         </div>
-        <div class="dff">
+
+        <div class="df">
+          {% if not app.user %}
           <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-            <a class="nav-link redcol colLink" href="/contact">Contact</a>
+            <a class="nav-link redcol colLink linkUnderline" href="/contact">Contact</a>
           </li>
-          {% if is_granted('ROLE_USER') %}
-          <li class="nav-item headerRight">
-            <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a> <!--Icône du panier-->
+          {% else %}
+          <li class="nav-item headerRightConnect"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
+            <a class="nav-link redcol colLink linkUnderline" href="/contact">Contact</a>
           </li>
+          {% endif %}
+
+          {% if is_granted('ROLE_USER') %}<!--Icône du panier-->
+          <!--<li class="nav-item headerRight">
+            <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a>
+          </li>-->
           {% endif %}
 
           {% if not app.user %}
           <li class="nav-item headerRight">
-            <a class="nav-link redcol colLink" href="/connexion">Connexion</a>
+            <a class="nav-link redcol colLink linkUnderline" href="/connexion">Connexion</a>
           </li>
           {% else %}
-          <li class="nav-item headerRight">
-            <a class="nav-link redcol colLink" href="{{ path('security_logout') }}">Déconnexion</a>
+          <li class="nav-item headerRightConnect">
+            <a class="nav-link redcol colLink linkUnderline" href="{{ path('security_logout') }}">Déconnexion</a>
           </li>
           {% endif %}
 
           {% if is_granted('ROLE_ADMIN') %}
-          <li class="nav-item headerRight">
-            <a class="nav-link redcol colLink" href="/admin">Admin</a>
+          <li class="nav-item headerRightConnect">
+            <a class="nav-link redcol colLink linkUnderline" href="/admin">Admin</a>
           </li>
           {% endif %}
+
         </div>
       </ul>
     </header>
@@ -71,7 +81,7 @@
           <div class="">
             <h3>Suivez-nous</h3>
             <span class="reseauSociau">
-              <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
+              <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x whitecol"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
             </span>
           </div>
           <div class="">

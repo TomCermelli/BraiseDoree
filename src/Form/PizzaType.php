@@ -18,7 +18,7 @@ class PizzaType extends AbstractType
         $builder
             ->add('name')
             ->add('ingredient')
-            ->add('sauce', ChoiceType::class, [
+            ->add('sauce', ChoiceType::class, [ /*On propose ici des choix prédéfini*/
               'choices'=> [
                 ' ' => ' ',
                 'rouge' => 'rouge',
@@ -27,7 +27,7 @@ class PizzaType extends AbstractType
             ])
             ->add('price')
             ->add('highPrice')
-            ->add('imageFile', FileType::class, [
+            ->add('imageFile', FileType::class, [ /*On force le champ à etre de type File afin de pouvoir upload un fichier de notre ordinateur*/
               'required' => false
             ])
         ;

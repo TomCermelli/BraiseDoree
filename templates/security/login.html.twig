@@ -2,22 +2,25 @@
 
 {% block body %}
 <link href="{{asset('css/connexion.css') }}" rel="stylesheet" type="text/css"/>
-<!--Descriptif des classes dans le fichier css correspondant-->
+<!--Descriptif des classes dans le fichier css correspondant (css/connexion.css)-->
 
 <div class="df flexbox-container">
 
   <div class="df">
-    <form action="{{ path('security_login') }}" method="post">
+    <form action="{{ path('security_login') }}" method="post"> <!--Le formulaire afin de se connecter-->
       <div class="form-group">
         <input placeholder="Adresse email ..." type="text" required name="_username" class="username" value="">
+        <!--On utilise le mail pour se connecter, le required name="_username" est néccéssaire quelque soit la méthode de connexion-->
       </div>
       <div class="form-group">
         <input placeholder="Mot de passe ..." type="password" required name="_password" class="password" value="">
+        <!--Il en va de même pour name="_password" il est néccéssaire au bon fonctionnement du formulaire-->
       </div>
       <div>
-        <button type="submit" class="btn btn-succes">Connexion</button>
+        <button class="btn btn-succes inputShape" type="submit">Connexion</button>
       </div>
-      <a class="" href="/inscription">Vous n'êtes pas encore incrit ? cliquer ici</a>
+      <!--Décommenter la ligne ci-dessous pour avoir un lien vers l'inscription-->
+      <!--<a class="whitecol" href="/inscription">Vous n'êtes pas encore incrit ? cliquer ici</a>-->
     </form>
   </div>
 

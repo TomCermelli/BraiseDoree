@@ -30,9 +30,9 @@
         </tbody>
     </table>
 
-    <a class="colLink" href="{{ path('drink_index') }}">back to list</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('drink_index') }}">back to list</a>
 
-    <a class="colLink" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
 
     {{ include('drink/_delete_form.html.twig') }}
 {% endblock %}

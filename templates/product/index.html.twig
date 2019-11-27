@@ -25,8 +25,8 @@
                 <td>{{ product.price }}</td>
                 <td>{{ product.image }}</td>
                 <td>
-                    <a class="colLink" href="{{ path('product_show', {'id': product.id}) }}">show</a>
-                    <a class="colLink" href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('product_show', {'id': product.id}) }}">show</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a class="colLink" href="{{ path('product_new') }}">Create new</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('product_new') }}">Create new</a>
 {% endblock %}

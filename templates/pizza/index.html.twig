@@ -29,8 +29,8 @@
                 <td>{{ pizza.highPrice }}</td>
                 <td>{{ pizza.image }}</td>
                 <td>
-                    <a class="redcol colLink" href="{{ path('pizza_show', {'id': pizza.id}) }}">détails</a>
-                    <a class="redcol colLink" href="{{ path('pizza_edit', {'id': pizza.id}) }}">edit</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('pizza_show', {'id': pizza.id}) }}">détails</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('pizza_edit', {'id': pizza.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a class="redcol colLink" href="{{ path('pizza_new') }}">Create new</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('pizza_new') }}">Create new</a>
 {% endblock %}

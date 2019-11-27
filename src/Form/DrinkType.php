@@ -16,7 +16,7 @@ class DrinkType extends AbstractType
             ->add('centiliter')
             ->add('name')
             ->add('price')
-            ->add('imageFile', FileType::class, [
+            ->add('imageFile', FileType::class, [ /*On force le champ à etre de type File afin de pouvoir upload un fichier de notre ordinateur*/
               'required' => false
             ])
         ;

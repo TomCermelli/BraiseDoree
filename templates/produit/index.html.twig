@@ -1,50 +1,50 @@
 {% extends 'base.html.twig' %}
 {% block page_title %}
- La Braise Dorée, Nos pizzas et autres produits
+La Braise Dorée, Nos pizzas et autres produits
 {% endblock %}
 
 {% block page_metadata %}
-
-<meta charset="utf-8" name="description" content="Vous pouvez consultez tout nos pizzas ainsi que tout nos autres produits proposer chez nous, (lasagnes,ciabatta,etc...)/>
+<meta charset="utf-8" name="description" content="Vous pouvez consultez tout nos pizzas ainsi que tout nos autres produits proposer chez nous, (lasagnes,)" />
 {% endblock %}
 
 {% block body %}
 <link href="{{asset('css/produit.css') }}" rel="stylesheet" type="text/css"/>
-<!--Descriptif des classes dans le fichier css correspondant-->
+<!--Descriptif des classes dans le fichier css correspondant (css/produit.css)-->
 
 <h1 class="redcol highTitle primaryTitle">Nos Pizzas</h1>
-<div class="shortcut linkDecoration">
+<div class="shortcut linkDecoration"> <!--La div regroupant les liens perméttant de se déplacer rapidement à des points d'ancrages-->
   <div class="ancrage">
-  <h3 class=""><a href="#lasagne" class="redcol nav-link colLink">Lasagnes</a></h3>
-</div>
+    <h3 class=""><a href="#lasagne" class="redcol nav-link colLink linkUnderline">Lasagnes</a></h3>
+  </div>
   <div class="ancrage">
-  <h3 class=""><a href="#ciabatta" class="redcol nav-link colLink">Ciabattas</a></h3>
-</div>
+    <h3 class=""><a href="#ciabatta" class="redcol nav-link colLink linkUnderline">Ciabattas</a></h3>
+  </div>
   <div class="ancrage">
-  <h3 class=""><a href="#boisson" class="redcol nav-link colLink">Boissons</a></h3>
-</div>
+    <h3 class=""><a href="#boisson" class="redcol nav-link colLink linkUnderline">Boissons</a></h3>
+  </div>
   <div class="ancrage">
-  <h3 class=""><a href="#dessert" class="redcol nav-link colLink">Désserts</a></h3>
+    <h3 class=""><a href="#dessert" class="redcol nav-link colLink linkUnderline">Désserts</a></h3>
+  </div>
 </div>
-</div>
-<div class="allPizza">
-  <div class="placementProduit">
+<div class="allPizza"> <!--Cette div regroupe tout les types de pizzas que propose la Braise Dorée (rouge , blanche , et autre comme la pizza nutella)-->
+
+  <div class="placementProduit"> <!--Cette div permet de placer toute les pizzas rouge ainsi que toute les informations lié à la pizza-->
     <h2 class="redcol primaryTitle">Pizza Rouge</h2>
-    {% for pizza in red_pizza  %}
+    {% for pizza in red_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les pizzas rouges pour celle-ci)-->
     <div class="positionPizza">
       <div class="imgPizza">
         <!--Route de l'image du produit via VichUploaderBundle-->
         <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
       </div>
-      <div class="divPizza">
+      <div class="divPizza"> <!--Regroupe le nom de la pizza et ses ingrédients-->
         <h3 class="miniTitle">{{ pizza.name }}</h3>
         <p class="posIngredient">{{ pizza.ingredient }}</p>
       </div>
-      <div class=" divPrix">
+      <div class=" divPrix"> <!--Met en place les prix moyens-->
         <h3 class="miniTitle">Prix Moyen</h3>
         <p class="posPrix">{{ pizza.price }}€</p>
       </div>
-      <div class=" divPrix">
+      <div class=" divPrix"> <!--Met en place les grands prix-->
         <h3 class="miniTitle">Prix Grand</h3>
         <p class="posPrix">{{ pizza.highPrice }}€</p>
       </div>
@@ -52,22 +52,23 @@
     {% endfor %}
   </div>
 
-  <div class=" placementProduit">
+  <div class=" placementProduit"> <!--Cette div permet de placer toute les pizzas rouge ainsi que toute les informations lié à la pizza-->
     <h2 class="redcol primaryTitle">Pizza Blanche</h2>
-    {% for pizza in white_pizza  %}
+    {% for pizza in white_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les pizzas blanches pour celle-ci)-->
     <div class="positionPizza">
       <div class="imgPizza">
+        <!--Route de l'image du produit via VichUploaderBundle-->
         <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
       </div>
-      <div class=" divPizza">
+      <div class=" divPizza"> <!--Regroupe le nom de la pizza et ses ingrédients-->
         <h3 class="miniTitle">{{ pizza.name }}</h3>
         <p class="posIngredient">{{ pizza.ingredient }}</p>
       </div>
-      <div class=" divPrix">
+      <div class=" divPrix"> <!--Met en place les prix moyens-->
         <h3 class="miniTitle">Prix Moyen</h3>
         <p class="posPrix">{{ pizza.price }}€</p>
       </div>
-      <div class=" divPrix">
+      <div class=" divPrix"> <!--Met en place les grands prix-->
         <h3 class="miniTitle">Prix Grand</h3>
         <p class="posPrix">{{ pizza.highPrice }}€</p>
       </div>
@@ -75,18 +76,19 @@
     {% endfor %}
     <h2 class="redcol primaryTitle">La Sucrée</h2>
     <div class="autreProduit">
-      {% for pizza in other_pizza  %}
+      {% for pizza in other_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les autres type de pizzas, ici les pizzas de type sucrée)-->
       <div class="">
+        <!--Route de l'image du produit via VichUploaderBundle-->
         <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
       </div>
       <div class="autrePizza">
         <h3 class="miniTitle">{{ pizza.name }}</h3>
         <div class="autrePrix">
-          <div class="">
+          <div class=""> <!--Met en place les prix moyens-->
             <h3 class="miniTitle">Prix Moyen</h3>
             <p class="">{{ pizza.price }}€</p>
           </div>
-          <div class="">
+          <div class=""> <!--Met en place les grands prix-->
             <h3 class="miniTitle">Prix Grand</h3>
             <p class="autrePizzaPrixm">{{ pizza.highPrice }}€</p>
           </div>
@@ -97,15 +99,15 @@
   </div>
 </div>
 
-
 <h2 class="redcol highTitle" id="lasagne">Lasagnes</h2>
 <p class="highTitle">ON VA METTRE LES PRIX ICI</p>
 <div class="produitTypePlacement">
 {% for product in lasagne %}
 <div class="divSeparation">
-  <div class="placementProduit">
-      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
-      <p class="nomProduit">{{ product.name }}</p>
+  <div class="placementProduit"> <!--On regroupe les produits par leurs images et leurs texte juste en dessous-->
+    <!--Route de l'image du produit via VichUploaderBundle-->
+    <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
+    <p class="nomProduit">{{ product.name }}</p>
   </div>
 </div>
 {% endfor %}
@@ -115,13 +117,13 @@
 <p class="">Ciabatta seul : 4.5€
   <br> Ciabatta + Boisson : 5.5€
   <br> Formule Ciabatta <br> + Boisson 33cl +dessert : 7.5€
-
-
 </p>
+
 <div class="produitTypePlacement">
-  {% for product in ciabatta %}
+  {% for product in ciabatta %} <!--Boucle pour afficher les ciabatta-->
   <div class="divSeparation">
     <div class="placementProduit">
+      <!--Route de l'image du produit via VichUploaderBundle-->
       <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
       <p class="nomProduit">{{ product.name }}</p>
     </div>
@@ -129,18 +131,18 @@
   {% endfor %}
 </div>
 
-
 <h2 class="redcol highTitle" id="boisson">Boissons</h2>
 <div class="produitTypePlacement">
-  {% for drink in drinks %}
+  {% for drink in drinks %} <!--Boucle pour afficher les boissons-->
   <div class="divSeparation">
     <div class="placementProduit">
       {% if drink.name == "Caprisun, Fruit shoot" %}
-        <span class=""><img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px"></span>
-        <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
+      <!--Route de l'image du produit via VichUploaderBundle-->
+      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
+      <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
       {% else %}
-        <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
-        <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
+      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
+      <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
       {% endif %}
     </div>
   </div>
@@ -153,9 +155,10 @@
 
 <h2 class="redcol highTitle" id="dessert">Désserts</h2>
 <div class="produitTypePlacement">
-  {% for product in dessert %}
+  {% for product in dessert %} <!--Boucle pour afficher les désserts-->
   <div class="divSeparation">
     <div class="placementProduit">
+      <!--Route de l'image du produit via VichUploaderBundle-->
       <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
       <p class="nomProduit">{{ product.name }} à {{ product.price }}€</p>
     </div>

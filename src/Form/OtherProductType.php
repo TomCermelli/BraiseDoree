@@ -14,7 +14,7 @@ class OtherProductType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type', ChoiceType::class, [
+            ->add('type', ChoiceType::class, [ /*On propose ici des choix prédéfini*/
               'choices'=> [
                 ' ' => ' ',
                 'Lasagne' => 'Lasagne',
@@ -24,7 +24,7 @@ class OtherProductType extends AbstractType
             ])
             ->add('name')
             ->add('price')
-            ->add('imageFile', FileType::class, [
+            ->add('imageFile', FileType::class, [ /*On force le champ à etre de type File afin de pouvoir upload un fichier de notre ordinateur*/
               'required' => false
             ])
         ;

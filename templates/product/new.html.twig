@@ -4,6 +4,7 @@
 
 {% block body %}
 <link href="{{asset('css/admin/product.css') }}" rel="stylesheet" type="text/css"/>
+<!--Descriptif des classes dans le fichier css correspondant (css/admin/product.css)-->
 
 <div class="placementForm">
   <div>
@@ -46,8 +47,8 @@
     </div>
 
     <div class="inputDisposition">
-      <button class="btn redcol buttonSize">{{ button_label|default('Sauvegarder') }}</button>
-      <a class="colLink" href="{{ path('product_index') }}">back to list</a>
+      <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
+      <a class="redcol colLink linkUnderline" href="{{ path('product_index') }}">back to list</a>
     </div>
     {{form_end(form)}}
   </div>

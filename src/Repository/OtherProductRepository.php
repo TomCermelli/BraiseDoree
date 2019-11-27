@@ -19,12 +19,12 @@ class OtherProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    public function findByLasagne() //on recherche ici la valeur rouge qui est dans la colonne sauce
+    public function findByLasagne() //On recherche ici la valeur rouge qui est dans la colonne sauce
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.type like :val')
-            ->setParameter('val', 'Lasagne')
-            ->orderBy('p.name', 'ASC')
+        return $this->createQueryBuilder('p') //On crée un alias afin de pouvoir s'en reservir plus bas
+            ->where('p.type like :val') //On cherche la colonne type ou on a pour valeur la variable 'val'
+            ->setParameter('val', 'Lasagne') //La variable 'val' est égale à 'Lasagne'
+            ->orderBy('p.name', 'ASC') //On trie ensuite par nom, par ordre croissant
             ->getQuery()
             ->getResult()
         ;
@@ -32,22 +32,22 @@ class OtherProductRepository extends ServiceEntityRepository
 
     public function findByCiabatta()  //on recherche ici la valeur blanche qui est dans la colonne sauce
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.type like :val')
-            ->setParameter('val', 'Ciabatta')
-            ->orderBy('p.name', 'ASC')
+        return $this->createQueryBuilder('p') //On crée un alias afin de pouvoir s'en reservir plus bas
+            ->where('p.type like :val') //On cherche la colonne type ou on a pour valeur la variable 'val'
+            ->setParameter('val', 'Ciabatta') //La variable 'val' est égale à 'Ciabatta'
+            ->orderBy('p.name', 'ASC') //On trie ensuite par nom, par ordre croissant
             ->getQuery()
             ->getResult()
         ;
     }
 
     public function findByDessert()
-    //on recherche ici la valeur "vide"" qui est dans la colonne sauce, c'est à dire autre que des pizza rouge ou blanche( exemple : pizza nutella)
+    //On recherche ici la valeur "vide" qui est dans la colonne sauce, c'est à dire autre que des pizza rouge ou blanche( exemple : pizza nutella)
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.type like :val')
-            ->setParameter('val', 'Déssert')
-            ->orderBy('p.name', 'ASC')
+        return $this->createQueryBuilder('p') //On crée un alias afin de pouvoir s'en reservir plus bas
+            ->where('p.type like :val') //On cherche la colonne type ou on a pour valeur la variable 'val'
+            ->setParameter('val', 'Déssert') //La variable 'val' est égale à 'Déssert'
+            ->orderBy('p.name', 'ASC') //On trie ensuite par nom, par ordre croissant
             ->getQuery()
             ->getResult()
         ;

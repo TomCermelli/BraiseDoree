@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block page_title %}La Braise Dorée, Pizzeria traditionnel - Accueil{% endblock %}
+{% block page_metadata %}
+<meta charset="utf-8" name="description" content="La Braise Dorée est une pizzeria traditionnel, qui saura répondre à vos attentes grâce à son service de qualité et son environnement convivial" />
+<!--Le titre est essentielle pour le référencement, on y met nos mots clés qui seront présentes sur notre page-->
+<!--Le content qui se trouve dans le méta est lui aussi tout important, -->
+{% endblock %}
 
 
 {% block body %}
-
-{% block page_title %}La Braise Dorée, Pizzeria traditionnel - Accueil{% endblock %}
-<!--Le titre est essentielle pour le référencement, on y met nos mots clés qui seront présentes sur notre page-->
-{% block page_metadata %}
-<meta charset="utf-8" name="description" content="La Braise Dorée est une pizzeria traditionnel, qui saura répondre à vos attentes grâce à son service de qualité et son environnement convivial" />
-{% endblock %}
-<!--Le content qui se trouve dans le méta est lui aussi tout important, -->
 <link href="{{asset('css/home.css') }}" rel="stylesheet" type="text/css"/>
 <!--Descriptif des classes dans le fichier css correspondant-->
 
@@ -18,13 +17,13 @@
 
 <div class="blockBodyContainer">
 
-  <div id="carouselHome" class="carousel slide" data-ride="carousel">
+  <div id="carouselHome" class="carousel slide" data-ride="carousel"> <!--Div du carousel, -->
     <ul class="carousel-indicators">
-        <li data-target=".carousel" data-slide-to="0" class="active"></li>
-        <li data-target=".carousel" data-slide-to="1"></li>
-        <li data-target=".carousel" data-slide-to="2"></li>
-      </ul>
-    <div class="carousel-inner">
+      <li data-target=".carousel" data-slide-to="0" class="active"></li> <!--Les boutons pour choisir l'image que l'on veut-->
+      <li data-target=".carousel" data-slide-to="1"></li>
+      <li data-target=".carousel" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner"> <!--La div où se trouve les images-->
       <div class="carousel-item active">
         <img class="d-block w-100" src="{{asset('asset/pizza_carrousel1.webp')}}" alt="Premier Slide" height="800px">
       </div>
@@ -37,11 +36,12 @@
     </div>
   </div>
 
-  <div class="about">
+  <div class="about"> <!--Div parlant de -->
     <h1 class="redcol">A propos de La Braise Dorée</h1>
-    <p>Spécialisés dans la cuisson de pizza traditionnel, nous proposons avant tout à notre clientèle, un moment de partage,convivial proposant un service de qualité. Nous vous garantissons un service rapide et efficase.
+    <p class="textInfo">Spécialisés dans la cuisson de pizza traditionnel, nous proposons avant tout à notre clientèle, un moment de partage, convivial proposant un service de qualité. Nous vous garantissons un service rapide et efficase.
     </p>
   </div>
+
   <div class="boxSize df fww"> <!--df=display: flex, fw=flex-wrap: wrap, cette div sert pour englober l'image de la devanture et les horraires-->
 
     <div class="df"> <!--l'image à coté des horraires , (devanture,intérieur) de la pizzeria-->
@@ -96,6 +96,7 @@
           </table>
         </div>
       </div>
+
     </div>
 
 </div>

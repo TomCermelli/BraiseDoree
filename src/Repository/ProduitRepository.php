@@ -20,12 +20,12 @@ class ProduitRepository extends ServiceEntityRepository
     }
 
 
-    public function findByRedPizza() //on recherche ici la valeur rouge qui est dans la colonne sauce
+    public function findByRedPizza() //On recherche ici la valeur rouge qui est dans la colonne sauce
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.sauce like :val')
-            ->setParameter('val', 'rouge')
-            ->orderBy('p.name', 'ASC')
+        return $this->createQueryBuilder('p') //On crée un alias afin de pouvoir s'en reservir plus bas
+            ->where('p.sauce like :val') //On cherche la colonne sauce ou on a pour valeur la variable 'val'
+            ->setParameter('val', 'rouge') //La variable 'val' est égale à 'rouge'
+            ->orderBy('p.name', 'ASC') //On trie ensuite par nom, par ordre croissant
             ->getQuery()
             ->getResult()
         ;
@@ -33,10 +33,10 @@ class ProduitRepository extends ServiceEntityRepository
 
     public function findByWhitePizza()  //on recherche ici la valeur blanche qui est dans la colonne sauce
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.sauce like :val')
-            ->setParameter('val', 'blanche')
-            ->orderBy('p.name', 'ASC')
+        return $this->createQueryBuilder('p') //On crée un alias afin de pouvoir s'en reservir plus bas
+            ->where('p.sauce like :val') //On cherche la colonne sauce ou on a pour valeur la variable 'val'
+            ->setParameter('val', 'blanche') //La variable 'val' est égale à 'blanche'
+            ->orderBy('p.name', 'ASC') //On trie ensuite par nom, par ordre croissant
             ->getQuery()
             ->getResult()
         ;
@@ -44,10 +44,10 @@ class ProduitRepository extends ServiceEntityRepository
 
     public function findByOtherPizza() //on recherche ici la valeur "vide"" qui est dans la colonne sauce, c'est à dire autre que des pizza rouge ou blanche(exemple: pizza nutella)
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.sauce like :val')
-            ->setParameter('val', ' ')
-            ->orderBy('p.name', 'ASC')
+        return $this->createQueryBuilder('p') //On crée un alias afin de pouvoir s'en reservir plus bas
+            ->where('p.sauce like :val') //On cherche la colonne sauce ou on a pour valeur la variable 'val'
+            ->setParameter('val', ' ') //La variable 'val' est égale à ' ' c'est à dire les pizzas qui ne sont ni rouges ni blanches (Pizza nutella)
+            ->orderBy('p.name', 'ASC') //On trie ensuite par nom, par ordre croissant
             ->getQuery()
             ->getResult()
         ;

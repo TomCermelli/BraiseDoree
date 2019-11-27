@@ -25,8 +25,8 @@
                 <td>{{ drink.centiliter }}</td>
                 <td>{{ drink.image }}</td>
                 <td>
-                    <a class="colLink" href="{{ path('drink_show', {'id': drink.id}) }}">show</a>
-                    <a class="colLink" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('drink_show', {'id': drink.id}) }}">show</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a class="colLink" href="{{ path('drink_new') }}">Create new</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('drink_new') }}">Create new</a>
 {% endblock %}

@@ -4,7 +4,7 @@
 
 {% block body %}
 <link href="{{asset('css/admin/pizza.css') }}" rel="stylesheet" type="text/css"/>
-
+<!--Descriptif des classes dans le fichier css correspondant (css/admin/pizza.css)-->
 
 <div class="placementForm">
   <div>
@@ -62,8 +62,8 @@
 
     <div class="inputDisposition">
       {{ form_row(form.imageFile) }}
-      <button class="btn redcol buttonSize">{{ button_label|default('Sauvegarder') }}</button>
-      <a class="colLink" href="{{ path('pizza_index') }}">back to list</a>
+      <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
+      <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">back to list</a>
     </div>
     {{form_end(form)}}
   </div>

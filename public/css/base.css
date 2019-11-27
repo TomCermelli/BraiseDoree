@@ -1,6 +1,5 @@
-.baseContainer {
-
-   background-image: radial-gradient(circle at top left, black, black ,rgb(10, 0, 0) 70%, rgb(23, 0, 0) 80% );
+.baseContainer { /*cette classe est reprise dans toute les pages, celle-ci permet de changer l'écriture, le fond, la forme de la page*/
+  background-image: radial-gradient(circle at top left, black, black ,rgb(10, 0, 0) 70%, rgb(23, 0, 0) 80% );
   font-size:1.2em ;
   color: white;
 }
@@ -21,34 +20,38 @@
   min-height: 898px;
 }
 
-.logo {
-  text-decoration: none;
+.divHeaderGauche { /*Navigateur à gauche du logo*/
+margin: 0 0 0 -6%;
 }
 
 .headerLeft { /*Navigateur à gauche du logo*/
- margin:18% 0 0 0;
+  padding: 11% 0 0 0;
+  margin: 0 0 0 0;
 }
 
+
 .headerRight { /*Navigateur à droite du logo*/
-  margin: 31% 0 0 0;
+  padding: 19% 0 0 0;
+}
+
+.headerRightConnect {
+  padding: 13% 0 0 0;
 }
 
 .navPos {
-  position:fixe
+  position:fixe;
 }
 
-.dff {
+/*.dff {
 display:flex;
-justify-content: space-around;
-flex-direction: row;
+justify-content: center;
 flex-wrap: wrap;
-
-}
+}*/
 
 .txtac {
   justify-content: center;
   text-align: center;
-  padding: 0 4% 0 0;
+  padding: 1%;
 }
 
 .separator {
@@ -66,15 +69,14 @@ flex-wrap: wrap;
 }
 
 
-a {
-  color: white;
+.linkUnderline { /*Positionnement du surlignement*/
   letter-spacing: 0.15em;
   display: inline-block;
   padding: 15px 20px;
   position: relative;
 }
 
-a:after {
+.linkUnderline:after { /*Permet le soulignement partant du centre pour aller à gauche et à droite du lien*/
   color: white;
   bottom: 0;
   content: "";
@@ -86,7 +88,8 @@ a:after {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after {
+
+.linkUnderline:hover:after { /*Au hover on change la couleur de notre surlignement*/
   color: white;
   width: 100%;
   left: 0;

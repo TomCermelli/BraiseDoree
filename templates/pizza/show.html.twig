@@ -38,9 +38,9 @@
         </tbody>
     </table>
 
-    <a class="colLink" href="{{ path('pizza_index') }}">revenir à la liste,</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">revenir à la liste,</a>
 
-    <a class="colLink" href="{{ path('pizza_edit', {'id': pizza.id}) }}">edit</a>
+    <a class="redcol colLink linkUnderline" href="{{ path('pizza_edit', {'id': pizza.id}) }}">edit</a>
 
     {{ include('pizza/_delete_form.html.twig') }}
 {% endblock %}
