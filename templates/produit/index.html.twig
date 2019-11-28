@@ -12,20 +12,22 @@ La Braise Dorée, Nos pizzas et autres produits
 <!--Descriptif des classes dans le fichier css correspondant (css/produit.css)-->
 
 <h1 class="redcol highTitle primaryTitle">Nos Pizzas</h1>
+
 <div class="shortcut linkDecoration"> <!--La div regroupant les liens perméttant de se déplacer rapidement à des points d'ancrages-->
   <div class="ancrage">
-    <h3 class=""><a href="#lasagne" class="redcol nav-link colLink linkUnderline">Lasagnes</a></h3>
+    <h3 class=""><a href="#lasagne" class="redcol nav-link colLink linkUnderline linkSize">Lasagnes</a></h3>
   </div>
   <div class="ancrage">
-    <h3 class=""><a href="#ciabatta" class="redcol nav-link colLink linkUnderline">Ciabattas</a></h3>
+    <h3 class=""><a href="#ciabatta" class="redcol nav-link colLink linkUnderline linkSize">Ciabattas</a></h3>
   </div>
   <div class="ancrage">
-    <h3 class=""><a href="#boisson" class="redcol nav-link colLink linkUnderline">Boissons</a></h3>
+    <h3 class=""><a href="#boisson" class="redcol nav-link colLink linkUnderline linkSize">Boissons</a></h3>
   </div>
   <div class="ancrage">
-    <h3 class=""><a href="#dessert" class="redcol nav-link colLink linkUnderline">Désserts</a></h3>
+    <h3 class=""><a href="#dessert" class="redcol nav-link colLink linkUnderline linkSize">Désserts</a></h3>
   </div>
 </div>
+
 <div class="allPizza"> <!--Cette div regroupe tout les types de pizzas que propose la Braise Dorée (rouge , blanche , et autre comme la pizza nutella)-->
 
   <div class="placementProduit"> <!--Cette div permet de placer toute les pizzas rouge ainsi que toute les informations lié à la pizza-->
@@ -34,7 +36,7 @@ La Braise Dorée, Nos pizzas et autres produits
     <div class="positionPizza">
       <div class="imgPizza">
         <!--Route de l'image du produit via VichUploaderBundle-->
-        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
+        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="320px" height="200px">
       </div>
       <div class="divPizza"> <!--Regroupe le nom de la pizza et ses ingrédients-->
         <h3 class="miniTitle">{{ pizza.name }}</h3>
@@ -58,7 +60,7 @@ La Braise Dorée, Nos pizzas et autres produits
     <div class="positionPizza">
       <div class="imgPizza">
         <!--Route de l'image du produit via VichUploaderBundle-->
-        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
+        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="320px" height="200px">
       </div>
       <div class=" divPizza"> <!--Regroupe le nom de la pizza et ses ingrédients-->
         <h3 class="miniTitle">{{ pizza.name }}</h3>
@@ -79,7 +81,7 @@ La Braise Dorée, Nos pizzas et autres produits
       {% for pizza in other_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les autres type de pizzas, ici les pizzas de type sucrée)-->
       <div class="">
         <!--Route de l'image du produit via VichUploaderBundle-->
-        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="280px" height="150px">
+        <img src="{{ vich_uploader_asset(pizza, 'imageFile') }}" alt="{{ pizza.name }}" width="320px" height="200px">
       </div>
       <div class="autrePizza">
         <h3 class="miniTitle">{{ pizza.name }}</h3>
@@ -100,13 +102,13 @@ La Braise Dorée, Nos pizzas et autres produits
 </div>
 
 <h2 class="redcol highTitle" id="lasagne">Lasagnes</h2>
-<p class="highTitle">ON VA METTRE LES PRIX ICI</p>
+<p class=""></p>
 <div class="produitTypePlacement">
 {% for product in lasagne %}
 <div class="divSeparation">
   <div class="placementProduit"> <!--On regroupe les produits par leurs images et leurs texte juste en dessous-->
     <!--Route de l'image du produit via VichUploaderBundle-->
-    <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
+    <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" height="350px">
     <p class="nomProduit">{{ product.name }}</p>
   </div>
 </div>
@@ -124,7 +126,7 @@ La Braise Dorée, Nos pizzas et autres produits
   <div class="divSeparation">
     <div class="placementProduit">
       <!--Route de l'image du produit via VichUploaderBundle-->
-      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" height="350px">
       <p class="nomProduit">{{ product.name }}</p>
     </div>
   </div>
@@ -136,14 +138,8 @@ La Braise Dorée, Nos pizzas et autres produits
   {% for drink in drinks %} <!--Boucle pour afficher les boissons-->
   <div class="divSeparation">
     <div class="placementProduit">
-      {% if drink.name == "Caprisun, Fruit shoot" %}
-      <!--Route de l'image du produit via VichUploaderBundle-->
-      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
+      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" height="350px">
       <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
-      {% else %}
-      <img src="{{ vich_uploader_asset(drink, 'imageFile') }}" alt="{{ drink.name }}" width="350px" max-height="300px">
-      <p class="nomProduit">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
-      {% endif %}
     </div>
   </div>
 {% endfor %}
@@ -159,7 +155,7 @@ La Braise Dorée, Nos pizzas et autres produits
   <div class="divSeparation">
     <div class="placementProduit">
       <!--Route de l'image du produit via VichUploaderBundle-->
-      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" max-height="350px">
+      <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="350px" height="350px">
       <p class="nomProduit">{{ product.name }} à {{ product.price }}€</p>
     </div>
   </div>

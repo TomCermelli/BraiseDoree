@@ -9,6 +9,19 @@
   justify-content: center;
 }
 
+.divDisposition {
+  display:flex;
+  justify-content: center;
+}
+
+.ingredientPos {
+
+}
+
+.imgFile {
+  text-align: center;
+}
+
 .inputDisposition {
   margin: 0 5% 0 5%;
 }

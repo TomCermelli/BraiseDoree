@@ -1,11 +1,24 @@
+
+
 .baseContainer { /*cette classe est reprise dans toute les pages, celle-ci permet de changer l'écriture, le fond, la forme de la page*/
   background-image: radial-gradient(circle at top left, black, black ,rgb(10, 0, 0) 70%, rgb(23, 0, 0) 80% );
-  font-size:1.2em ;
+  font-family: 'Cabin';
+  font-size:1.6em ;
   color: white;
 }
 
 .redcol { /*couleur réservé pour les titres*/
   color: #ed000b;
+  font-family: 'Lobster';
+}
+
+.tailleTitre { /*h2*/
+  font-size: 1.75em;
+}
+
+.primaryTitle { /*le h1, regroupant tout les gros titres */
+  text-align: center;
+  font-size: 2.9em;
 }
 
 .whitecol { /* couleur réservé pour les infos de tout les produits(uniquement dans leur page de création/edit/etc...)*/
@@ -21,21 +34,25 @@
 }
 
 .divHeaderGauche { /*Navigateur à gauche du logo*/
-margin: 0 0 0 -6%;
+margin: 0 0 0 -13%;
+}
+
+.divHeaderGaucheConnect {
+  margin: 0 0 0 -5%;
 }
 
 .headerLeft { /*Navigateur à gauche du logo*/
-  padding: 11% 0 0 0;
+  padding: 7% 0 0 0;
   margin: 0 0 0 0;
 }
 
 
 .headerRight { /*Navigateur à droite du logo*/
-  padding: 19% 0 0 0;
+  padding: 11% 0 0 0;
 }
 
 .headerRightConnect {
-  padding: 13% 0 0 0;
+  padding: 8% 0 0 0;
 }
 
 .navPos {
@@ -56,8 +73,10 @@ flex-wrap: wrap;
 
 .separator {
   color: red;
-  border: 1px solid;
-  opacity: 0.5;
+  width: 50%;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: 0.3;
 }
 
 .footerContainer {
@@ -68,6 +87,10 @@ flex-wrap: wrap;
   margin:0 15px 0 15px;
 }
 
+
+.linkSize {
+  font-size: 1.3em;
+}
 
 .linkUnderline { /*Positionnement du surlignement*/
   letter-spacing: 0.15em;

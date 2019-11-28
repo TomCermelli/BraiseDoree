@@ -13,7 +13,7 @@
     </div>
     {{form_start(form)}}
 
-    <div class="df">
+    <div class="divDisposition">
       <div class="form-group inputDisposition">
         <div class="labelDisposition">
           {{ form_label(form.name, 'Nom') }}
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="form-group inputDisposition">
+    <div class="form-group inputDisposition ingredientPos">
       <div class="labelDisposition">
         {{ form_label(form.ingredient, 'Ingrédients') }}
       </div>
@@ -41,7 +41,8 @@
       </div>
     </div>
 
-    <div class="df">
+
+    <div class="divDisposition">
       <div class="form-group inputDisposition">
         <div class="labelDisposition">
           {{ form_label(form.price, 'Prix Moyen') }}
@@ -61,7 +62,9 @@
     </div>
 
     <div class="inputDisposition">
+      <div class="imgFile">
       {{ form_row(form.imageFile) }}
+      </div>
       <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
       <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">back to list</a>
     </div>

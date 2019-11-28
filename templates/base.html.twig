@@ -1,6 +1,18 @@
 {% extends 'head.html.twig' %}
 
 {% block stylesheets %}
+<style type="text/css">
+@font-face { /*Police des titres, liens*/
+  font-family: 'Lobster';
+  src:url("{{asset('css/fonts/Lobster-Regular.ttf')}}") format('truetype');
+}
+
+@font-face { /*Police du texte en général*/
+  font-family: 'Cabin';
+  src:url("{{asset('css/fonts/Cabin-Regular.ttf')}}") format('truetype');
+}
+</style>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="{{asset('css/base.css') }}" rel="stylesheet" type="text/css"/>
 {% endblock %}
@@ -10,17 +22,33 @@
   <div class="baseContainer"> <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
     <header>
       <ul class="nav txtac navPos"> <!--Nav utilisant bootstrap-->
+        {% if not app.user %}
         <div class="df divHeaderGauche">
           <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-            <a class="nav-link redcol colLink linkUnderline" href="/">Accueil</a>
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
           </li>
           <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink linkUnderline" href="/formules">Nos formules</a>
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/formules">Nos formules</a>
           </li>
           <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink linkUnderline" href="/produit">Nos produits</a>
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
           </li>
         </div>
+        {% else %}
+        <div class="df divHeaderGaucheConnect">
+          <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
+          </li>
+          <li class="nav-item headerLeft">
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/formules">Nos formules</a>
+          </li>
+          <li class="nav-item headerLeft">
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
+          </li>
+        </div>
+
+
+        {% endif %}
 
         <div class="logo">
           <li>
@@ -33,69 +61,69 @@
         <div class="df">
           {% if not app.user %}
           <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-            <a class="nav-link redcol colLink linkUnderline" href="/contact">Contact</a>
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
           </li>
           {% else %}
           <li class="nav-item headerRightConnect"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-            <a class="nav-link redcol colLink linkUnderline" href="/contact">Contact</a>
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
           </li>
           {% endif %}
 
           {% if is_granted('ROLE_USER') %}<!--Icône du panier-->
           <!--<li class="nav-item headerRight">
-            <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a>
-          </li>-->
-          {% endif %}
+          <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a>
+        </li>-->
+        {% endif %}
 
-          {% if not app.user %}
-          <li class="nav-item headerRight">
-            <a class="nav-link redcol colLink linkUnderline" href="/connexion">Connexion</a>
-          </li>
-          {% else %}
-          <li class="nav-item headerRightConnect">
-            <a class="nav-link redcol colLink linkUnderline" href="{{ path('security_logout') }}">Déconnexion</a>
-          </li>
-          {% endif %}
+        {% if not app.user %}
+        <li class="nav-item headerRight">
+          <a class="nav-link redcol colLink linkUnderline linkSize" href="/connexion">Connexion</a>
+        </li>
+        {% else %}
+        <li class="nav-item headerRightConnect">
+          <a class="nav-link redcol colLink linkUnderline linkSize" href="{{ path('security_logout') }}">Déconnexion</a>
+        </li>
+        {% endif %}
 
-          {% if is_granted('ROLE_ADMIN') %}
-          <li class="nav-item headerRightConnect">
-            <a class="nav-link redcol colLink linkUnderline" href="/admin">Admin</a>
-          </li>
-          {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item headerRightConnect">
+          <a class="nav-link redcol colLink linkUnderline linkSize" href="/admin">Admin</a>
+        </li>
+        {% endif %}
 
-        </div>
-      </ul>
-    </header>
+      </div>
+    </ul>
+  </header>
 
-    <hr class="separator">
+  <hr class="separator">
 
-    <div class="blockContainer">
-      {% block body %}{% endblock %}
-    </div>
+  <div class="blockContainer">
+    {% block body %}{% endblock %}
+  </div>
 
-    <hr class="separator">
+  <hr class="separator">
 
-    <footer>
-      <div class="footerContainer"> <!--container du footer-->
+  <footer>
+    <div class="footerContainer"> <!--container du footer-->
+      <div class="">
         <div class="">
-          <div class="">
-            <h3>Suivez-nous</h3>
-            <span class="reseauSociau">
-              <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x whitecol"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
-            </span>
-          </div>
-          <div class="">
-          </div>
+          <h3>Suivez-nous</h3>
+          <span class="reseauSociau">
+            <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x whitecol"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
+          </span>
+        </div>
+        <div class="">
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!--Les 3 CDN de bootstrap pour le JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!--Les 3 CDN de bootstrap pour le JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--Lien perméttant d'utiliser les icônes de fontawesome (icônes de facebook,twitter....) -->
-    {% block javascripts %}{% endblock %}
-  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--Lien perméttant d'utiliser les icônes de fontawesome (icônes de facebook,twitter....) -->
+  {% block javascripts %}{% endblock %}
+</div>
 </body>
 {% endblock %}

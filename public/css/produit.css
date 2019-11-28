@@ -1,6 +1,11 @@
+.primaryTitle {
+  margin: 3% 0 0 0;
+}
+
 .miniTitle { /*les h3 (uniquement dans les partie pizzas)*/
   font-size: 1.1em;
   margin: 10px 3px 0 3px;
+  text-align: center;
 }
 
 .highTitle { /*les autres h3 (Ciabattas, Lasagnes, Désserts ...)*/
@@ -11,12 +16,7 @@
 
 .ancrage { /*lien perméttant de se déplacer instantanément au gros titre correspondant*/
   display:flex;
-  margin: 2% 2% 8% 2% ;
-}
-
-
-.primaryTitle { /*le h1 et les h2, regroupant tout les gros titres */
-  text-align: center;
+  margin: 2% 1% 8% 1% ;
 }
 
 .shortcut { /*Div des plusieurs liens d'ancrages perméttants un déplacement rapide sur la page*/
@@ -31,8 +31,9 @@
 
 .placementProduit {
   display: flex;
+  width: 50%;
   flex-direction: column;
-  margin: 0 2% 0 4%;
+  margin: 0 1% 0 0;
 }
 
 .allPizza { /*Div regroupant les 3 types de pizzas*/
@@ -52,7 +53,7 @@
 
 
 .divPizza {/*div principale du prix regroupant le titre et les ingrédients assocciés à la pizza*/
-  width: 43%;
+  width: 40%;
   min-height: 50%;
   text-align: center;
   display: flex;
@@ -68,10 +69,11 @@
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
+  margin: 0 5px 0 5px;
 }
 
 .posPrix { /*position du prix de la pizza*/
-  margin: 25% 0 25% 0;
+  margin: 25% 0% 25% 0%;
 }
 
 .autrePizza { /*Autre que pizza blanche et rouge ( Nutella )*/
@@ -104,5 +106,5 @@
 
 .nomProduit { /*Text sous l'image des produits autres que les pizzas*/
   text-align: center;
-  font-size: 1.5em;
+  width: 350px;
 }

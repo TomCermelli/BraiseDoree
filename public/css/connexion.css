@@ -1,23 +1,34 @@
-.inscription {
+.connexionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.connexion {
+  display: flex;
   justify-content: center;
 }
 
 .title {
   text-align: center;
+  margin: 2% 0 4% 0;
 }
 
-.inputDisposition {
-  margin: 2%;
+
+
+.inputAttribute { /*Taille des champs*/
+  width: 350px;
+  margin: 0 0 10% 0;
 }
 
-.inscriptionDisposition {
-  float: right;
-}
-
-.inputShape {
+.btnShape {
   border-radius: 25%;
   width: 85px;
   height: 30px;
+}
+
+.connexionDisposition {
+  float: right;
 }
 
 .btn{ /*Concerne le boutton submit, class pour toute la décoration du bouton*/
