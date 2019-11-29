@@ -1,39 +1,47 @@
-
-
-.baseContainer { /*cette classe est reprise dans toute les pages, celle-ci permet de changer l'écriture, le fond, la forme de la page*/
-  background-image: radial-gradient(circle at top left, black, black ,rgb(10, 0, 0) 70%, rgb(23, 0, 0) 80% );
+.baseContainer { /* Cette classe est reprise dans toute les pages, celle-ci permet de changer l'écriture, le fond, la forme de la page */
+  background-image:
+  radial-gradient(circle at top left, #211717 20%,transparent, #0E0E0E ,rgb(10, 0, 0) 70%,transparent, rgb(23, 0, 0) 80%,transparent),
+  radial-gradient(circle at center, #211717, rgb(23, 0, 0), rgb(23, 0, 0) 50%, #0A0909, rgb(23, 0, 0) 80% );
   font-family: 'Cabin';
   font-size:1.6em ;
   color: white;
 }
 
-.redcol { /*couleur réservé pour les titres*/
+.headerContainer { /* Permet de fixer le navigateur sur toute les pages */
+  position: fixed;
+background-color: #0A0909;
+  width: 100%;
+  z-index: 2;
+}
+
+.blockContainer { /* Il s'agit du container regroupant les block body de toute les pages */
+padding: 9% 0 0 0;
+  min-height: 1081px;
+}
+
+.redcol { /* Couleur réservé pour les titres */
   color: #ed000b;
   font-family: 'Lobster';
 }
 
-.tailleTitre { /*h2*/
+.tailleTitre { /* h2 */
   font-size: 1.75em;
 }
 
-.primaryTitle { /*le h1, regroupant tout les gros titres */
+.primaryTitle { /* Le h1, regroupant tout les gros titres */
   text-align: center;
   font-size: 2.9em;
 }
 
-.whitecol { /* couleur réservé pour les infos de tout les produits(uniquement dans leur page de création/edit/etc...)*/
+.whitecol { /* Couleur réservé pour les infos de tout les produits(uniquement dans leur page de création/edit/etc...) */
   color:white;
 }
 
-.colLink:hover { /*Au survol des liens, on leurs change leurs couleurs en blancs*/
+.colLink:hover { /* Au survol des liens, on leurs change leurs couleurs en blancs */
   color: white;
 }
 
-.blockContainer {
-  min-height: 898px;
-}
-
-.divHeaderGauche { /*Navigateur à gauche du logo*/
+.divHeaderGauche { /* Navigateur à gauche du logo */
 margin: 0 0 0 -13%;
 }
 
@@ -41,13 +49,13 @@ margin: 0 0 0 -13%;
   margin: 0 0 0 -5%;
 }
 
-.headerLeft { /*Navigateur à gauche du logo*/
+.headerLeft { /* Navigateur à gauche du logo */
   padding: 7% 0 0 0;
   margin: 0 0 0 0;
 }
 
 
-.headerRight { /*Navigateur à droite du logo*/
+.headerRight { /* Navigateur à droite du logo */
   padding: 11% 0 0 0;
 }
 
@@ -55,23 +63,13 @@ margin: 0 0 0 -13%;
   padding: 8% 0 0 0;
 }
 
-.navPos {
-  position:fixe;
-}
-
-/*.dff {
-display:flex;
-justify-content: center;
-flex-wrap: wrap;
-}*/
-
 .txtac {
   justify-content: center;
   text-align: center;
   padding: 1%;
 }
 
-.separator {
+.separator { /* Il s'agit du hr au dessus du footer */
   color: red;
   width: 50%;
   border: 2px solid;
@@ -88,18 +86,18 @@ flex-wrap: wrap;
 }
 
 
-.linkSize {
+.linkSize { /* Tailles des liens */
   font-size: 1.3em;
 }
 
-.linkUnderline { /*Positionnement du surlignement*/
+.linkUnderline { /* Positionnement du surlignement */
   letter-spacing: 0.15em;
   display: inline-block;
   padding: 15px 20px;
   position: relative;
 }
 
-.linkUnderline:after { /*Permet le soulignement partant du centre pour aller à gauche et à droite du lien*/
+.linkUnderline:after { /* Permet le soulignement partant du centre pour aller à gauche et à droite du lien */
   color: white;
   bottom: 0;
   content: "";
@@ -112,7 +110,7 @@ flex-wrap: wrap;
   width: 0;
 }
 
-.linkUnderline:hover:after { /*Au hover on change la couleur de notre surlignement*/
+.linkUnderline:hover:after { /* Au hover on change la couleur de notre surlignement */
   color: white;
   width: 100%;
   left: 0;

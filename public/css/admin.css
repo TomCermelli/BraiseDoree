@@ -1,14 +1,14 @@
-.creationList { /*Position de la div comprenant les listes*/
+.creationList { /* Position de la div comprenant les listes */
   display: flex;
   flex-direction: column;
 
 }
 
-.placementList { /*Disposition des listes de création*/
+.placementList { /* Disposition des listes de création */
   justify-content: center;
   margin: 7% 0 0 0;
 }
 
-.mainTitle { /*H1 de la page*/
+.mainTitle { /* H1 de la page */
   text-align: center;
 }

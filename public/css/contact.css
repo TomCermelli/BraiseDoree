@@ -1,10 +1,10 @@
-.placementElem { /*Permet de placer l'adresse à gauche et le contact à droite*/
+.placementElem { /* Permet de placer l'adresse à gauche et le contact à droite */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.directionElem { /*Permet de mettre le label au dessu du bouton*/
+.directionElem { /* Permet de mettre le label au dessu du bouton */
   flex-direction: column;
 }
 

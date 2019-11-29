@@ -9,36 +9,58 @@
   justify-content: center;
 }
 
-.divDisposition {
+.divDisposition { /*Position des div*/
   display:flex;
   justify-content: center;
 }
 
-.ingredientPos {
-
+.labelPrice {
+  margin: 25% 0 -20% 0;
 }
 
-.imgFile {
-  text-align: center;
+.inputLowPrice { /*Position Input "Prix Moyens"*/
+  margin: 0 15% 0 0;
 }
 
 .inputDisposition {
   margin: 0 5% 0 5%;
 }
 
-.labelDisposition{
+.labelIngredient { /*Position label "Ingredients"*/
+  padding: 30px 0% 0 18%;
+}
+
+.labelDisposition{ /*Position label "Nom" et "Sauce"*/
   padding: 30px 0 0 0;
+  margin: 25% 0 -20% 0;
+}
+
+.formIngredient { /*Position input "Ingrédients"*/
+  padding: 0 18% 0 18%;
+  margin: -6% 0 0 0;
 }
 
 .formDisposition {
-  margin: -30px 0 8% 0;
+  margin: -3% 0 8% 0;
 }
 
-.sauce {
-  margin: 27% 0 0 0;
+.formSauce {
+  margin: -40% 0 8% 0;
+}
 
+.sauce { /*Position du label "Sauce"*/
+  padding: 30% 0 0 0;
+  margin: 45% 0 -20% 0;
+}
+
+.formSave { /*Position de l'input "Sauce"*/
+  margin: 0 19% 5% 19%;
+}
+
+.posSave {
+  margin: 0 0 0 15%;
 }
 
 .buttonSize {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }

@@ -6,67 +6,68 @@
 <link href="{{asset('css/admin/pizza.css') }}" rel="stylesheet" type="text/css"/>
 <!--Descriptif des classes dans le fichier css correspondant (css/admin/pizza.css)-->
 
+<h1 class="redcol titrePrincipal">Crée une nouvelle Pizza</h1>
 <div class="placementForm">
   <div>
-    <div>
-      <h1 class="redcol titrePrincipal">Crée une nouvelle Pizza</h1>
-    </div>
+
     {{form_start(form)}}
 
-    <div class="divDisposition">
-      <div class="form-group inputDisposition">
-        <div class="labelDisposition">
+    <div class="divDisposition"> <!--Div regroupant l'input et le label de "Nom" et "Sauce"-->
+      <div class="form-group inputDisposition"> <!--Div de l'attribut "Nom"-->
+        <div class="labelDisposition"> <!--Position du label "Nom"-->
           {{ form_label(form.name, 'Nom') }}
         </div>
-        <div class="formDisposition">
+        <div class="formDisposition"> <!--Position de l'input "Nom"-->
           {{form_row(form.name, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
         </div>
       </div>
-      <div class="form-group inputDisposition">
-        <div class="form-group sauce">
+      <div class="form-group inputDisposition"> <!--Div de l'attribut "Sauce"-->
+        <div class="form-group sauce"> <!--Position du label "Sauce"-->
           {{ form_label(form.sauce, 'Sauce') }}
         </div>
-        <div class="formDisposition">
+        <div class="formSauce"> <!--Position de l'input "Sauce"-->
           {{form_row(form.sauce, {'label': ' ', 'attr': {'placeholder': 'Sauce ...', 'class': 'form-control'} })}}
         </div>
       </div>
     </div>
 
-    <div class="form-group inputDisposition ingredientPos">
-      <div class="labelDisposition">
+    <div class="form-group inputDisposition ingredientPos"> <!--Div de l'attribut "Ingredient"-->
+      <div class="labelIngredient"> <!--Position du label "Ingrédients"-->
         {{ form_label(form.ingredient, 'Ingrédients') }}
       </div>
-      <div class="formDisposition">
+      <div class="formIngredient"> <!--Position de l'input "Ingredient"-->
         {{form_row(form.ingredient, {'label': ' ', 'attr': {'placeholder': 'Ingrédients ...', 'class': 'form-control'} })}}
       </div>
     </div>
 
 
-    <div class="divDisposition">
-      <div class="form-group inputDisposition">
-        <div class="labelDisposition">
-          {{ form_label(form.price, 'Prix Moyen') }}
+    <div class="divDisposition"> <!--Div regroupant l'input et le label de "Prix Moyens" et "Prinx Grands"-->
+      <div class="form-group "> <!--Div de l'attribut "Prix Moyen"-->
+        <div class="labelPrice"> <!--Position du label "Prix Moyens"-->
+          {{ form_label(form.price, 'Prix Moyens') }}
         </div>
-        <div class="formDisposition">
+        <div class="inputLowPrice"> <!--Position de l'input "Prix Moyens"-->
           {{form_row(form.price, {'label': ' ', 'attr': {'placeholder': 'Prix Moyens ...', 'class': 'form-control'} })}}
         </div>
       </div>
-      <div class="form-group inputDisposition">
-        <div class="labelDisposition">
+      <div class="form-group "> <!--Div de l'attribut "Prix Grand"-->
+        <div class="labelPrice"> <!--Position du label "Prix Grands"-->
           {{ form_label(form.highPrice, 'Prix Grands') }}
         </div>
-        <div class="formDisposition">
+        <div class=" inputHighPrice"> <!--Position de l'input "Prix Grands"-->
           {{form_row(form.highPrice, {'label': ' ', 'attr': {'placeholder': 'Prix Grands ...', 'class': 'form-control'} })}}
         </div>
       </div>
     </div>
 
-    <div class="inputDisposition">
-      <div class="imgFile">
-      {{ form_row(form.imageFile) }}
+    <div class="">
+      <div class="formSave">
+        {{ form_row(form.imageFile, {'label': ' '}) }}
       </div>
-      <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
-      <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">back to list</a>
+      <div class="posSave">
+        <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
+        <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">back to list</a>
+      </div>
     </div>
     {{form_end(form)}}
   </div>

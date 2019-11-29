@@ -2,10 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 0% 0 20%;
 }
 
 .titrePrincipal {
-  display: flex;
+  margin: 3% 0 0 10%;
   justify-content: center;
 }
 
@@ -22,7 +23,7 @@
 }
 
 .imageDisposition {
-  padding: 4.5% 0 5% 8%;
+  padding: 3.5% 0 5% 8%;
 }
 
 .buttonSize {

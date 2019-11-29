@@ -12,23 +12,21 @@
 <link href="{{asset('css/home.css') }}" rel="stylesheet" type="text/css"/>
 <!--Descriptif des classes dans le fichier css correspondant-->
 
-<div class="blockBodyContainer">
-
   <div id="carouselHome" class="carousel slide" data-ride="carousel"> <!--Div du carousel, -->
-    <ul class="carousel-indicators">
-      <li data-target=".carousel" data-slide-to="0" class="active"></li> <!--Les boutons pour choisir l'image que l'on veut-->
-      <li data-target=".carousel" data-slide-to="1"></li>
-      <li data-target=".carousel" data-slide-to="2"></li>
+    <ul class="carousel-indicators carouselBtn">
+      <li data-target=".carousel" data-slide-to="0" class="active "></li> <!--Les boutons pour choisir l'image que l'on veut-->
+      <li data-target=".carousel" data-slide-to="1" class=""></li>
+      <li data-target=".carousel" data-slide-to="2" class=""></li>
     </ul>
     <div class="carousel-inner"> <!--La div où se trouve les images-->
       <div class="carousel-item active">
-        <img class="d-block w-100" src="{{asset('asset/pizza_carrousel1.webp')}}" alt="Premier Slide" height="800px">
+        <img class="d-block w-100" src="{{asset('asset/pizza_carrousel1.webp')}}" alt="Premier Slide" height="864px">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{asset('asset/pizza.jpg')}}" alt="Deuxième Slide" height="800px">
+        <img class="d-block w-100" src="{{asset('asset/pizza.jpg')}}" alt="Deuxième Slide" height="864px">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{asset('asset/pizza_carrousel3.jpg')}}" alt="Troisième slide" height="800px">
+        <img class="d-block w-100" src="{{asset('asset/pizza_carrousel3.jpg')}}" alt="Troisième slide" height="864px">
       </div>
     </div>
   </div>
@@ -95,6 +93,4 @@
       </div>
 
     </div>
-
-</div>
 {% endblock %}

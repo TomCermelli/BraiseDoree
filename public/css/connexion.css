@@ -16,22 +16,22 @@
 
 
 
-.inputAttribute { /*Taille des champs*/
+.inputAttribute { /* Taille des champs */
   width: 350px;
   margin: 0 0 10% 0;
 }
 
-.btnShape {
+.btnShape { /* Forme du bouton */
   border-radius: 25%;
   width: 85px;
   height: 30px;
 }
 
-.connexionDisposition {
+.connexionDisposition { /* Position du bouton de connexion */
   float: right;
 }
 
-.btn{ /*Concerne le boutton submit, class pour toute la décoration du bouton*/
+.btn{ /* Concerne le boutton submit, class pour toute la décoration du bouton */
   border:none;
 	padding:6px 0 6px 0;
 	border-radius:8px;
@@ -41,7 +41,7 @@
 
 }
 
-.btn:hover {
+.btn:hover { /* Changement de couleur au hover */
   color:black;
   background:white;
   border: solid 1px black;

@@ -20,82 +20,83 @@
 <!--Descriptif des classes dans le fichier css correspondant (css/base.css)-->
 <body>
   <div class="baseContainer"> <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
-    <header>
-      <ul class="nav txtac navPos"> <!--Nav utilisant bootstrap-->
-        {% if not app.user %}
-        <div class="df divHeaderGauche">
-          <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
-          </li>
-          <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/formules">Nos formules</a>
-          </li>
-          <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
-          </li>
-        </div>
-        {% else %}
-        <div class="df divHeaderGaucheConnect">
-          <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
-          </li>
-          <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/formules">Nos formules</a>
-          </li>
-          <li class="nav-item headerLeft">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
-          </li>
-        </div>
 
-
-        {% endif %}
-
-        <div class="logo">
-          <li>
-            <a href="/">
-              <img src="{{asset('asset/logo.png')}}" alt="Logo de la BraiseDorée" width="300px" height="150px">
-            </a>
-          </li>
-        </div>
-
-        <div class="df">
+      <header>
+        <div class="headerContainer">
+        <ul class="nav txtac navPos"> <!--Nav utilisant bootstrap-->
           {% if not app.user %}
-          <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
+          <div class="df divHeaderGauche">
+            <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
+            </li>
+            <li class="nav-item headerLeft">
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/formule">Nos formules</a>
+            </li>
+            <li class="nav-item headerLeft">
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
+            </li>
+          </div>
+          {% else %}
+          <div class="df divHeaderGaucheConnect">
+            <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
+            </li>
+            <li class="nav-item headerLeft">
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/formules">Nos formules</a>
+            </li>
+            <li class="nav-item headerLeft">
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
+            </li>
+          </div>
+
+
+          {% endif %}
+
+          <div class="logo">
+            <li>
+              <a href="/">
+                <img src="{{asset('asset/logo.png')}}" alt="Logo de la BraiseDorée" width="300px" height="150px">
+              </a>
+            </li>
+          </div>
+
+          <div class="df">
+            {% if not app.user %}
+            <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
+            </li>
+            {% else %}
+            <li class="nav-item headerRightConnect"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
+              <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
+            </li>
+            {% endif %}
+
+            {% if is_granted('ROLE_USER') %}<!--Icône du panier-->
+            <!--<li class="nav-item headerRight">
+            <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a>
+          </li>-->
+          {% endif %}
+
+          {% if not app.user %}
+          <li class="nav-item headerRight">
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/connexion">Connexion</a>
           </li>
           {% else %}
-          <li class="nav-item headerRightConnect"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
+          <li class="nav-item headerRightConnect">
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="{{ path('security_logout') }}">Déconnexion</a>
           </li>
           {% endif %}
 
-          {% if is_granted('ROLE_USER') %}<!--Icône du panier-->
-          <!--<li class="nav-item headerRight">
-          <a class="nav-link redcol colLink" href="#"><i class="fas fa-shopping-cart"></i></a>
-        </li>-->
-        {% endif %}
+          {% if is_granted('ROLE_ADMIN') %}
+          <li class="nav-item headerRightConnect">
+            <a class="nav-link redcol colLink linkUnderline linkSize" href="/admin">Admin</a>
+          </li>
+          {% endif %}
 
-        {% if not app.user %}
-        <li class="nav-item headerRight">
-          <a class="nav-link redcol colLink linkUnderline linkSize" href="/connexion">Connexion</a>
-        </li>
-        {% else %}
-        <li class="nav-item headerRightConnect">
-          <a class="nav-link redcol colLink linkUnderline linkSize" href="{{ path('security_logout') }}">Déconnexion</a>
-        </li>
-        {% endif %}
-
-        {% if is_granted('ROLE_ADMIN') %}
-        <li class="nav-item headerRightConnect">
-          <a class="nav-link redcol colLink linkUnderline linkSize" href="/admin">Admin</a>
-        </li>
-        {% endif %}
-
-      </div>
-    </ul>
-  </header>
-
-  <hr class="separator">
+        </div>
+      </ul>
+    </div>
+    </header>
 
   <div class="blockContainer">
     {% block body %}{% endblock %}
