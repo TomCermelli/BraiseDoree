@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{pathToWeb}}/css/pdf.css" />
+</head>
+
+
+<body>
+  <div class="pdfContainer">
+    <header>
+      <div class="imgDispo">
+        <img src='{{ pathToWeb }}/asset/logo.png' alt="Logo de la BraiseDorée" width="300px" height="150px">
+      </div>
+    </header>
+
+
+    <h1 class="title">Nos Pizzas</h1>
+    <table class="table tableColor">
+
+      <div class="pizzaPrice">
+          <p class="priceColMoy">Moyenne</p>
+          <p class="priceColGra">Grande</p>
+      </div>
+
+      <tbody>
+        {% for pizza in pizzas %}
+        <tr>
+          <td>{{ pizza.name }}</td>
+          <td>{{ pizza.ingredient }}</td>
+          <td></td>
+          <td></td>
+          <td>{{ pizza.price }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ pizza.highPrice }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    <h2 class="title">Lasagnes</h2>
+    <table class="table tableColor">
+      <p class="priceCol">Price</p>
+      <tbody>
+        {% for product in lasagne %}
+        <tr>
+          <td>{{ product.type }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    <h2 class="title">Ciabattas</h2>
+    <table class="table tableColor">
+      <p class="priceCol">Price</p>
+      <tbody>
+        {% for product in ciabatta %}
+        <tr>
+          <td>{{ product.type }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    <table class="table tableColor">
+      <p class="priceCol">Price</p>
+      {% for product in dessert %}
+      <tr class="whitecol">
+        <td>{{ product.type }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2 class="title">Boissons</h2>
+  <table class="table tableColor">
+    <p class="priceCol">Price</p>
+    <tbody>
+      {% for drink in drinks %}
+      <tr class="whitecol">
+        <td>{{ drink.name }} {{drink.centiliter}}</td>
+        <td>{{ drink.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.imgDispo {
+  text-align: center;
+  margin: 0 0 5% 0;
+}
+
+.title {
+  color:red;
+  text-align: center;
+  margin: 0 0 3% 0;
+}
+
+.pizzaPrice{
+  display: flex;
+}
+
+.df {
+  display: flex;
+}
+
+.priceColMoy {
+  color: white;
+  text-align: right;
+  margin: 0 13% 0 0;
+}
+
+.priceColGra {
+  color: white;
+  text-align: right;
+  margin: -2.5% 2% 0 0;
+}
+
+.tableColor{
+  color:white;
+}
+
+.ciabattaPrice{
+width: 100px;
+}
+
+.pdfContainer{ /*Il s'agit du  dégradé de la page*/
+background:-webkit-gradient(linear,left top,left bottom,color-stop(15%,rgb(14, 14 ,14)),color-stop(20%,rgb(50, 13, 40)),color-stop(100%,rgb(23, 0, 0)));
+width: 1100px;
+}
