@@ -30,17 +30,17 @@ class PDFController extends AbstractController
         'ciabatta' => $autreProduitRepository->findByCiabatta(), //On récupère toute les ciabattas
         'dessert' => $autreProduitRepository->findByDessert(), //On récupère tout les désserts
         'drinks' => $drinkRepository->findAll(), //On récupère toute les données des boissons
-
-
     ]);
-
     /*Le nom du PDF*/
     $filename = "LaBraiseDorée_Produit";
-
-
-
+    $option = [
+      'margin-top' => 0,
+      'margin-right' => 0,
+      'margin-bottom' => 0,
+      'margin-left' => 0,
+    ];
     return new Response (
-      $snappy->getOutputFromHtml($html),
+      $snappy->getOutputFromHtml($html, $option),
       // ok status code
       200,
       array(
@@ -48,5 +48,13 @@ class PDFController extends AbstractController
         'Contet-Disposition' => sprintf('attachment; filename="'.$filename.'.pdf"')
       )
     );
+
+    /*$pdfContents=$snappy->getOutputFromHtml($html);
+    // on l'envoie au navigateur
+    $response=new Response($pdfContents);
+    $response->headers->set('Content-type', 'application/octect-stream');
+    $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', "Your report.pdf"));
+    //avec attachment on force le téléchargement à l'arriver de la page
+    return $response;*/
   }
 }

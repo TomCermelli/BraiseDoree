@@ -9,6 +9,7 @@
         "doctrine/doctrine-bundle": "^1.11",
         "h4cc/wkhtmltopdf-amd64": "^0.12.4",
         "knplabs/knp-snappy-bundle": "^1.6",
+        "mikehaertl/phpwkhtmltopdf": "^2.4",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "4.3.*",
         "symfony/console": "4.3.*",
