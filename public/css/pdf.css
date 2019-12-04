@@ -1,3 +1,15 @@
+.pdfContainer{ /*Il s'agit du  dégradé de la page*/
+background:-webkit-gradient(linear,left top,left bottom,color-stop(10%,rgb(14, 14 ,14)),color-stop(30%,rgb(35, 0, 0)),color-stop(55%,rgb(40, 0, 0)),color-stop(70%,rgb(25,8,8)),color-stop(85%,rgb(23, 0, 0)),color-stop(100%,rgb(14, 14 ,14)));
+width: 1100px;
+min-height: 4670px;
+font-size: 1.3em;
+}
+
+.footMargin {
+  margin:  0 0 -100% 0;
+}
+
+
 .imgDispo {
   text-align: center;
   margin: 0 0 5% 0;
@@ -6,27 +18,27 @@
 .title {
   color:red;
   text-align: center;
-  margin: 0 0 3% 0;
+  margin: 3% 0 3% 0;
 }
 
 .pizzaPrice{
   display: flex;
 }
 
-.df {
-  display: flex;
+.priceCol {
+  color: white;
 }
 
 .priceColMoy {
   color: white;
   text-align: right;
-  margin: 0 13% 0 0;
+  margin: 0 10.5% 0 0;
 }
 
 .priceColGra {
   color: white;
   text-align: right;
-  margin: -2.5% 2% 0 0;
+  margin: -2.9% 1% 0 0;
 }
 
 .tableColor{
@@ -35,9 +47,4 @@
 
 .ciabattaPrice{
 width: 100px;
-}
-
-.pdfContainer{ /*Il s'agit du  dégradé de la page*/
-background:-webkit-gradient(linear,left top,left bottom,color-stop(15%,rgb(14, 14 ,14)),color-stop(20%,rgb(50, 13, 40)),color-stop(100%,rgb(23, 0, 0)));
-width: 1100px;
 }

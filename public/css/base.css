@@ -9,7 +9,7 @@
 
 .headerContainer { /* Permet de fixer le navigateur sur toute les pages */
   position: fixed;
-background-color: #0A0909;
+  background-color: #0A0909;
   width: 100%;
   z-index: 2;
 }
@@ -20,7 +20,7 @@ padding: 9% 0 0 0;
 }
 
 .redcol { /* Couleur réservé pour les titres */
-  color: #ed000b;
+  color: #DE0909;
   font-family: 'Lobster';
 }
 

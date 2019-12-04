@@ -24,6 +24,29 @@
   justify-content: center;
 }
 
+.downloadBtn {
+  text-align: center;
+  margin: -5% 0 4% 0;
+}
+
+
+
+.btn{ /*Concerne le boutton submit, class pour toute la décoration du bouton*/
+  border:none;
+  font-size: 1.3em;
+	border-radius:8px;
+	background-color: #A81515;
+  color:white;
+
+}
+
+.btn:hover {
+  color:black;
+  background:white;
+  border: solid 1px black;
+}
+
+
 .placementTitle { /**/
   display: flex;
   justify-content: center;

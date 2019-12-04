@@ -38,8 +38,10 @@ class PDFController extends AbstractController
       'margin-right' => 0,
       'margin-bottom' => 0,
       'margin-left' => 0,
+      'page-height' => 124 * 3,
+
     ];
-    return new Response (
+    /*return new Response (
       $snappy->getOutputFromHtml($html, $option),
       // ok status code
       200,
@@ -47,14 +49,14 @@ class PDFController extends AbstractController
         'Content-Type' =>'application/pdf',
         'Contet-Disposition' => sprintf('attachment; filename="'.$filename.'.pdf"')
       )
-    );
+    );*/
 
-    /*$pdfContents=$snappy->getOutputFromHtml($html);
+    $pdfContents=$snappy->getOutputFromHtml($html, $option);
     // on l'envoie au navigateur
     $response=new Response($pdfContents);
     $response->headers->set('Content-type', 'application/octect-stream');
-    $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', "Your report.pdf"));
+    $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', "La Braise Dorée - Carte.pdf"));
     //avec attachment on force le téléchargement à l'arriver de la page
-    return $response;*/
+    return $response;
   }
 }

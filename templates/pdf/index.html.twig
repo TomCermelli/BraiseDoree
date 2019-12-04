@@ -44,14 +44,17 @@
 
     <h2 class="title">Lasagnes</h2>
     <table class="table tableColor">
-      <p class="priceCol">Price</p>
+
       <tbody>
         {% for product in lasagne %}
         <tr>
           <td>{{ product.type }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
+          <td></td>
+
         </tr>
+
         {% endfor %}
       </tbody>
     </table>
@@ -59,7 +62,7 @@
 
     <h2 class="title">Ciabattas</h2>
     <table class="table tableColor">
-      <p class="priceCol">Price</p>
+
       <tbody>
         {% for product in ciabatta %}
         <tr>
@@ -71,14 +74,15 @@
       </tbody>
     </table>
 
-
+<h1 class="title">Déssert</h1>
     <table class="table tableColor">
-      <p class="priceCol">Price</p>
+
       {% for product in dessert %}
       <tr class="whitecol">
         <td>{{ product.type }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
+        <td></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -86,16 +90,20 @@
 
   <h2 class="title">Boissons</h2>
   <table class="table tableColor">
-    <p class="priceCol">Price</p>
+
     <tbody>
       {% for drink in drinks %}
       <tr class="whitecol">
         <td>{{ drink.name }} {{drink.centiliter}}</td>
+        <td></td>
         <td>{{ drink.price }}</td>
+
       </tr>
       {% endfor %}
     </tbody>
   </table>
+  <div class="footMargin">
+  </div>
 
 </div>
 </body>
