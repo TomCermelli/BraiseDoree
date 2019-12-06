@@ -1,5 +1,6 @@
 .primaryTitle {
-  margin: 3% 0 0 0;
+  margin: 0 0 5% 0;
+  padding: 4% 0 0 0;
 }
 
 .miniTitle { /*les h3 (uniquement dans les partie pizzas)*/
@@ -54,9 +55,12 @@
 
 .placementProduit {
   display: flex;
-  width: 50%;
   flex-direction: column;
-  margin: 0 1% 0 0;
+  justify-content: center;
+}
+
+.pizzaRouge {
+  background-color: #1F1E1E;
 }
 
 .allPizza { /*Div regroupant les 3 types de pizzas*/
@@ -66,8 +70,9 @@
 .positionPizza { /**/
   display: flex;
   flex-wrap: wrap;
-  margin: 5% 0 5% 0;
+  margin: 3% 0 2% 0;
   max-height: 20%;
+  justify-content: center;
 }
 
 .imgPizza {
@@ -76,7 +81,7 @@
 
 
 .divPizza {/*div principale du prix regroupant le titre et les ingrédients assocciés à la pizza*/
-  width: 40%;
+  width: 25%;
   min-height: 50%;
   text-align: center;
   display: flex;
@@ -92,7 +97,7 @@
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
-  margin: 0 5px 0 5px;
+  margin: 0 1% 0 1%;
 }
 
 .posPrix { /*position du prix de la pizza*/
@@ -106,6 +111,36 @@
   flex-direction: column;
 }
 
+#ciabatta {
+  padding: 110px 0 0 0;
+}
+
+#lasagne {
+  padding: 110px 0 0 0;
+}
+
+#drink {
+  padding: 110px 0 0 0;
+}
+
+#dessert {
+  padding: 110px 0 0 0;
+}
+
+.lasagneBackground {
+  background-color: #1F1E1E;
+  min-height: 500px;
+}
+
+.drinkBackground {
+  background-color: #1F1E1E;
+  min-height: 500px;
+}
+
+.dessertHeight {
+  min-height: 500px;
+}
+
 .autrePrix { /*Prix des pizzas dans la catégorie "Sucrée"*/
   display: flex;
 }
@@ -114,8 +149,12 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 2% 0 4%;
+  justify-content: center;
 }
 
+.ciabattaTxt {
+  text-align: center;
+}
 
 .produitTypePlacement {
   display: flex;
@@ -130,4 +169,8 @@
 .nomProduit { /*Text sous l'image des produits autres que les pizzas*/
   text-align: center;
   width: 350px;
+}
+
+.produitTitleSize {
+  font-size: 1.8em;
 }

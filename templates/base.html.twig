@@ -19,7 +19,7 @@
 {% block basebody %}
 <!--Descriptif des classes dans le fichier css correspondant (css/base.css)-->
 <body>
-  <div class="baseContainer"> <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
+   <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
 
       <header>
         <div class="headerContainer">
@@ -27,25 +27,19 @@
           {% if not app.user %}
           <div class="df divHeaderGauche">
             <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
+              <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/">Accueil</a>
             </li>
             <li class="nav-item headerLeft">
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/formule">Nos formules</a>
-            </li>
-            <li class="nav-item headerLeft">
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
+              <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
             </li>
           </div>
           {% else %}
           <div class="df divHeaderGaucheConnect">
             <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/">Accueil</a>
+              <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/">Accueil</a>
             </li>
             <li class="nav-item headerLeft">
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/formule">Nos formules</a>
-            </li>
-            <li class="nav-item headerLeft">
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
+              <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/produit">Nos produits</a>
             </li>
           </div>
 
@@ -63,11 +57,11 @@
           <div class="df">
             {% if not app.user %}
             <li class="nav-item headerRight"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
+              <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/contact">Contact</a>
             </li>
             {% else %}
             <li class="nav-item headerRightConnect"> <!--headerRight sert à gérer la marge du menu à droite de l'image -->
-              <a class="nav-link redcol colLink linkUnderline linkSize" href="/contact">Contact</a>
+              <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/contact">Contact</a>
             </li>
             {% endif %}
 
@@ -79,17 +73,17 @@
 
           {% if not app.user %}
           <li class="nav-item headerRight">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/connexion">Connexion</a>
+            <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/connexion">Connexion</a>
           </li>
           {% else %}
           <li class="nav-item headerRightConnect">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="{{ path('security_logout') }}">Déconnexion</a>
+            <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="{{ path('security_logout') }}">Déconnexion</a>
           </li>
           {% endif %}
 
           {% if is_granted('ROLE_ADMIN') %}
           <li class="nav-item headerRightConnect">
-            <a class="nav-link redcol colLink linkUnderline linkSize" href="/admin">Admin</a>
+            <a class="nav-link titleRedcol colLink linkUnderline linkSize" href="/admin">Admin</a>
           </li>
           {% endif %}
 
@@ -102,13 +96,11 @@
     {% block body %}{% endblock %}
   </div>
 
-  <hr class="separator">
-
   <footer>
     <div class="footerContainer"> <!--container du footer-->
       <div class="">
         <div class="">
-          <h3>Suivez-nous</h3>
+          <h3 class="titleRedcol">Suivez-nous</h3>
           <span class="reseauSociau">
             <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x whitecol"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
           </span>
@@ -125,6 +117,5 @@
 
   <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--Lien perméttant d'utiliser les icônes de fontawesome (icônes de facebook,twitter....) -->
   {% block javascripts %}{% endblock %}
-</div>
 </body>
 {% endblock %}

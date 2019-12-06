@@ -1,24 +1,11 @@
-.placementElem { /* Permet de placer l'adresse à gauche et le contact à droite */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.primaryTitle {
+    font-size: 2.7em;
+    margin: 4% 0 2% 0;
 }
 
-.directionElem { /* Permet de mettre le label au dessu du bouton */
-  flex-direction: column;
-}
-
-.adresse { /*La div de l'adresse*/
-  display: flex;
-  flex-direction: column;
-}
-
-.adresseTitle { /*Le titre, "Adresse", placement au centre de sa div*/
-  text-align: center;
-}
-
-.adresseInfo { /*Adresse complète + numéro de téléphone*/
-  text-align: center;
+.formContact {
+  background-color: #1F1E1E;
+  min-height: 500px;
 }
 
 .divContact { /*la div comprenant toute les infos du contact + la carte google map*/
@@ -26,9 +13,19 @@
   flex-direction: column;
 }
 
+.posForm {
+   display: flex;
+   justify-content: center;
+ }
+
+ .directionElem { /* Permet de mettre le label au dessu du bouton */
+   flex-direction: column;
+
+ }
+
 .contactTitle { /*Le titre, "Contact", placement au centre de sa div*/
   text-align: center;
-  margin: 0 0 25% 0;
+  margin: 3% 0 5% 0;
 }
 
 
@@ -40,9 +37,24 @@
   margin: -10% 3% 5% 3%;
 }
 
+.messageDisp {
+
+  margin: 0 41% 0 41%;
+}
+
+.labelMessage {
+  margin: 2% 0 -4.5% 0;
+}
+
+
+.inputMessage {
+
+}
+
 .mainInfoDisposition { /*Disposition du h1 et de son texte*/
   text-align: center;
   margin: 2% 0 5% 0;
+  min-height: 500px;
 }
 
 .mainTitleInfo { /*Le texte sous le h1, pour l'espacement entre le titre et le texte*/
@@ -53,7 +65,7 @@
 
 
 .boutonSubmit { /*Placement du bouton submit*/
-  margin: 5% 0 0 77%;
+  margin: 2% 0 4% 15%;
   border-radius: 25%;
   width: 85px;
   height: 30px;
@@ -75,4 +87,28 @@
   background:white;
   border: solid 1px black;
   border-radius:8px;
+}
+
+.df {
+  justify-content: center;
+}
+
+.adressePos {
+  display:flex;
+  justify-content: center;
+}
+
+.adresse { /*La div de l'adresse*/
+  display: flex;
+  flex-direction: column;
+
+  min-height: 500px;
+}
+
+.adresseTitle { /*Le titre, "Adresse", placement au centre de sa div*/
+  text-align: center;
+}
+
+.adresseInfo { /*Adresse complète + numéro de téléphone*/
+  text-align: center;
 }

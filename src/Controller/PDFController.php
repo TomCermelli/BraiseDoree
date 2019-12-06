@@ -41,7 +41,7 @@ class PDFController extends AbstractController
 
 
     ];
-
+     /*Décomenter cette partie et commenté la partie en bas afin de pouvoir
     return new Response (
       $snappy->getOutputFromHtml($html, $option),
       // ok status code
@@ -50,14 +50,14 @@ class PDFController extends AbstractController
         'Content-Type' =>'application/pdf',
         'Content-Disposition' => sprintf('inline; filename="'.$filename.'.pdf"')
       )
-    );
+    );*/
 
-    /*$pdfContents=$snappy->getOutputFromHtml($html, $option);
+    $pdfContents=$snappy->getOutputFromHtml($html, $option);
     // on l'envoie au navigateur
     $response=new Response($pdfContents);
     $response->headers->set('Content-type', 'application/octect-stream');
     $response->headers->set('Content-Disposition', sprintf('attachment; filename="%s"', "La Braise Dorée - Carte.pdf"));
     //avec attachment on force le téléchargement à l'arriver de la page
-    return $response;*/
+    return $response;
   }
 }

@@ -1,27 +1,46 @@
 .baseContainer { /* Cette classe est reprise dans toute les pages, celle-ci permet de changer l'écriture, le fond, la forme de la page */
-  background-image:
-  radial-gradient(circle at top left, #211717 20%,transparent, #0E0E0E ,rgb(10, 0, 0) 70%,transparent, rgb(23, 0, 0) 80%,transparent),
-  radial-gradient(circle at center, #211717, rgb(23, 0, 0), rgb(23, 0, 0) 50%, #0A0909, rgb(23, 0, 0) 80% );
-  font-family: 'Cabin';
+  background-color: #EFEFEF;
+  color: #2F2E2E;
+  font-family: 'Lobster'; /*Cabin*/
   font-size:1.6em ;
-  color: white;
 }
 
 .headerContainer { /* Permet de fixer le navigateur sur toute les pages */
   position: fixed;
-  background-color: #0A0909;
+  background-color: #1F1E1E;
   width: 100%;
   z-index: 2;
 }
 
 .blockContainer { /* Il s'agit du container regroupant les block body de toute les pages */
-padding: 9% 0 0 0;
+  padding: 9% 0 0 0;
   min-height: 1081px;
 }
 
-.redcol { /* Couleur réservé pour les titres */
-  color: #DE0909;
+
+.titleSize {
+    font-size: 2.7em;
+}
+
+.titleRedcol { /* Couleur réservé pour les titres */
+  color: #F2F0F0;
+  text-shadow: 3px 3px 3px #660606;
   font-family: 'Lobster';
+}
+
+
+.titleBlackcol {
+  color: #1B1A1A;
+  text-shadow: 3px 3px 3px #B60E0E;
+  font-family: 'Lobster';
+}
+
+.txtWhitecol{
+color: #EFEFEF;
+}
+
+.txtBlackecol{
+color: #2F2E2E;
 }
 
 .tailleTitre { /* h2 */
@@ -56,11 +75,11 @@ margin: 0 0 0 -13%;
 
 
 .headerRight { /* Navigateur à droite du logo */
-  padding: 11% 0 0 0;
+  padding: 9% 0 0 0;
 }
 
 .headerRightConnect {
-  padding: 8% 0 0 0;
+  padding: 7% 0 0 0;
 }
 
 .txtac {
@@ -78,7 +97,9 @@ margin: 0 0 0 -13%;
 }
 
 .footerContainer {
+  background-color: #1B1A1A;
   text-align: center;
+  min-height: 130px;
 }
 
 .reseauSociau {
@@ -97,6 +118,7 @@ margin: 0 0 0 -13%;
   position: relative;
 }
 
+
 .linkUnderline:after { /* Permet le soulignement partant du centre pour aller à gauche et à droite du lien */
   color: white;
   bottom: 0;
@@ -112,6 +134,12 @@ margin: 0 0 0 -13%;
 
 .linkUnderline:hover:after { /* Au hover on change la couleur de notre surlignement */
   color: white;
+  width: 100%;
+  left: 0;
+}
+
+.linkUnderline:hover:after { /* Au hover on change la couleur de notre surlignement */
+  color: red;
   width: 100%;
   left: 0;
 }

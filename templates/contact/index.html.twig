@@ -5,7 +5,7 @@ La Braise Dorée - Contactez-nous
 {% endblock %}
 
 {% block page_metadata %}
-<meta charset="utf-8" name="description" content="Contactez-nous si vous avez des questions quel-qu’elle soit sur notre entreprise/produit/service, vous retrouverez ses informations ci-dessous." />
+<meta charset="utf-8" name="description" content="Contactez-nous si vous avez des questions quel-qu’elle soit sur notre entreprise/produit/service, grâce à notre formulaire de contact." />
 {% endblock %}
 
 {% block body %}
@@ -23,20 +23,76 @@ La Braise Dorée - Contactez-nous
 {% endfor %}
 
 <div class="mainInfoDisposition">
-  <h1 class="redcol primaryTitle">Contactez-nous</h1>
-  <p class="mainTitleInfo">Vous avez des questions, besoins de renseignements, n'hésitez pas à nous contacter pour toutes demandes soit grâce au formulaire de contact, soit grâce à notre numéro de téléphone</p>
+  <h1 class="titleBlackcol primaryTitle titleSize">Contactez-nous</h1>
+  <p class="mainTitleInfo">
+    Vous avez des questions, besoins de renseignements, n'hésitez pas à nous contacter pour toutes demandes soit grâce au formulaire de contact,
+    soit grâce à notre numéro de téléphone
+  </p>
+</div>
+
+<div id="contactForm" class="divContact txtWhitecol formContact">
+  <h2 class="titleRedcol contactTitle titleSize">Formulaire de contact</h2>
+  {{form_start(form)}}
+  <div class="posForm"> <!--Cette div regroupe le "Nom" et le "Prénom"-->
+    <div class="directionElem"> <!--Représente le label et le champ "Nom"-->
+      <div class="labelDisposition">
+        {{ form_label(form.lastname, 'Nom') }}
+      </div>
+      <div class="form-group inputDisposition">
+        {{form_row(form.lastname, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
+      </div>
+    </div>
+    <div class="directionElem"> <!--Représente le label et le champ "Prénom"-->
+      <div class="labelDisposition">
+        {{ form_label(form.firstname, 'Prénom') }}
+      </div>
+      <div class="form-group inputDisposition">
+        {{form_row(form.firstname, {'label': ' ', 'attr': {'placeholder': 'Prénom ...', 'class': 'form-control'} })}}
+      </div>
+    </div>
+  </div>
+  <div class="posForm"> <!--Cette div regroupe le "Sujet" et l"Email"-->
+    <div class="directionElem"> <!--Représente le label et le champ "Sujet"-->
+      <div class="labelDisposition">
+        {{ form_label(form.subject, 'Sujet') }}
+      </div>
+      <div class="form-group inputDisposition">
+        {{form_row(form.subject, {'label': ' ', 'attr': {'placeholder': 'Sujet ...', 'class': 'form-control'} })}}
+      </div>
+    </div>
+    <div class="directionElem"> <!--Représente le label et le champ "Email"-->
+      <div class="labelDisposition">
+        {{ form_label(form.email, 'Email') }}
+      </div>
+      <div class="form-group inputDisposition">
+        {{form_row(form.email, {'label': ' ', 'attr': {'placeholder': 'Email ...', 'class': 'form-control'} })}}
+      </div>
+    </div>
+  </div>
+  <div class="posForm directionElem messageDisp"> <!--Représente le label et le champ "Message"-->
+    <div class="labelMessage">
+      {{ form_label(form.message, 'Message') }}
+    </div>
+    <div class="form-group ">
+      {{form_row(form.message, {'label': ' ', 'attr': {'placeholder': 'Ecrivez votre message ...', 'class': 'form-control'} })}}
+    </div>
+  </div>
+  <div class="posForm">
+    <input class="boutonSubmit btn" type="submit" id="submit" name="submit" value="Envoyer">
+  </div>
+  {{form_end(form)}}
 </div>
 
 
-<div class="placementElem"> <!--Div regroupant l'adresse et le formulaire de contact de la Braise Dorée-->
+
 
   <div class="df">
     <div class="adresse">
-      <h2 class="redcol adresseTitle tailleTitre">Adresse</h3>
+      <h2 class="titleBlackcol adresseTitle titleSize">Adresse</h3>
         <p class="adresseInfo">36 Avenue du Professeur Grasset</p>
         <p class="adresseInfo">34090 Montpellier</p>
         <p class="adresseInfo">Tel : 06 43 59 16 34</p>
-        <div style="width: 650px"> <!--l'iframe utilisé ici est celle de google map afin d'avoir le rendu d'une map sur le site-->
+        <div class="df" style="width: 650px"> <!--l'iframe utilisé ici est celle de google map afin d'avoir le rendu d'une map sur le site-->
           <iframe width="650" height="500" src="https://maps.google.com/maps?width=720&amp;height=500&amp;hl=en&amp;q=36%20Avenue%20du%20Professeur%20Grasset%2C%20Montpellier+(La%20Braise%20Dor%C3%A9e)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
             <a href="https://www.maps.ie/coordinates.html">latitude longitude finder</a>
           </iframe>
@@ -45,58 +101,6 @@ La Braise Dorée - Contactez-nous
       </div>
     </div>
 
-    <div id="contactForm" class="divContact">
-      <h2 class="redcol contactTitle tailleTitre">Formulaire de contact</h2>
-      {{form_start(form)}}
-      <div class="df"> <!--Cette div regroupe le "Nom" et le "Prénom"-->
-        <div class="directionElem"> <!--Représente le label et le champ "Nom"-->
-          <div class="labelDisposition">
-            {{ form_label(form.lastname, 'Nom') }}
-          </div>
-          <div class="form-group inputDisposition">
-            {{form_row(form.lastname, {'label': ' ', 'attr': {'placeholder': 'Nom ...', 'class': 'form-control'} })}}
-          </div>
-        </div>
-        <div class="directionElem"> <!--Représente le label et le champ "Prénom"-->
-          <div class="labelDisposition">
-            {{ form_label(form.firstname, 'Prénom') }}
-          </div>
-          <div class="form-group inputDisposition">
-            {{form_row(form.firstname, {'label': ' ', 'attr': {'placeholder': 'Prénom ...', 'class': 'form-control'} })}}
-          </div>
-        </div>
-      </div>
-      <div class="df"> <!--Cette div regroupe le "Sujet" et l"Email"-->
-        <div class="directionElem"> <!--Représente le label et le champ "Sujet"-->
-          <div class="labelDisposition">
-            {{ form_label(form.subject, 'Sujet') }}
-          </div>
-          <div class="form-group inputDisposition">
-            {{form_row(form.subject, {'label': ' ', 'attr': {'placeholder': 'Sujet ...', 'class': 'form-control'} })}}
-          </div>
-        </div>
-        <div class="directionElem"> <!--Représente le label et le champ "Email"-->
-          <div class="labelDisposition">
-            {{ form_label(form.email, 'Email') }}
-          </div>
-          <div class="form-group inputDisposition">
-            {{form_row(form.email, {'label': ' ', 'attr': {'placeholder': 'Email ...', 'class': 'form-control'} })}}
-          </div>
-        </div>
-      </div>
-      <div class="df directionElem"> <!--Représente le label et le champ "Message"-->
-        <div class="labelDisposition">
-          {{ form_label(form.message, 'Message') }}
-        </div>
-        <div class="form-group inputDisposition">
-          {{form_row(form.message, {'label': ' ', 'attr': {'placeholder': 'Ecrivez votre message ...', 'class': 'form-control'} })}}
-        </div>
-      </div>
-      <div class="">
-        <input class="boutonSubmit btn" type="submit" id="submit" name="submit" value="Envoyer">
-      </div>
-      {{form_end(form)}}
-    </div>
 
-  </div>
+
 {% endblock %}
