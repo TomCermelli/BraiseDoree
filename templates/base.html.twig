@@ -23,7 +23,13 @@
 
       <header>
         <div class="headerContainer">
+          {% if not app.user %}
+
+          <ul class="nav txtad navPos"> <!--Nav utilisant bootstrap-->
+          {% else %}
         <ul class="nav txtac navPos"> <!--Nav utilisant bootstrap-->
+          {% endif %}
+
           {% if not app.user %}
           <div class="df divHeaderGauche">
             <li class="nav-item headerLeft"> <!--headerLeft sert à gérer la marge du menu à gauche de l'image -->

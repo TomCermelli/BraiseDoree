@@ -9,12 +9,6 @@
   text-align: center;
 }
 
-.highTitle { /*les autres h3 (Ciabattas, Lasagnes, Désserts ...)*/
-  font-size: 2.5em;
-  text-align: center;
-}
-
-
 .ancrage { /*lien perméttant de se déplacer instantanément au gros titre correspondant*/
   display:flex;
   margin: 2% 1% 8% 1% ;
@@ -97,7 +91,7 @@
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
-  margin: 0 1% 0 1%;
+  margin: 0.8% 1% 0 1%;
 }
 
 .posPrix { /*position du prix de la pizza*/
@@ -130,6 +124,11 @@
 .lasagneBackground {
   background-color: #1F1E1E;
   min-height: 500px;
+}
+
+.lasagneTxt {
+  text-align: center;
+  margin: 0 0 3% 0;
 }
 
 .drinkBackground {
