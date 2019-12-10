@@ -1,25 +1,19 @@
 .baseContainer { /* Cette classe est reprise dans toute les pages, celle-ci permet de changer l'écriture, le fond, la forme de la page */
-  background-color: #EFEFEF;
-  color: #2F2E2E;
-  font-family: 'Lobster'; /*Cabin*/
-  font-size:1.7em ;
+background-color: #EFEFEF;
+color: #2F2E2E;
+font-family: 'Lobster'; /*Cabin*/
+font-size:1.5em ;
 }
 
-.headerContainer { /* Permet de fixer le navigateur sur toute les pages */
-  position: fixed;
-  background-color: #1F1E1E;
-  width: 100%;
-  z-index: 2;
-}
 
 .blockContainer { /* Il s'agit du container regroupant les block body de toute les pages */
-  padding: 9% 0 0 0;
-  min-height: 1081px;
+padding: 12% 0 0 0;
+min-height: 1630px;
 }
 
 
 .titleSize {
-    font-size: 2.7em;
+  font-size: 2.7em;
 }
 
 .titleRedcol { /* Couleur réservé pour les titres */
@@ -36,15 +30,11 @@
 }
 
 .txtWhitecol{
-color: #EFEFEF;
+  color: #EFEFEF;
 }
 
 .txtBlackecol{
-color: #2F2E2E;
-}
-
-.tailleTitre { /* h2 */
-  font-size: 1.75em;
+  color: #2F2E2E;
 }
 
 .primaryTitle { /* Le h1, regroupant tout les gros titres */
@@ -58,41 +48,6 @@ color: #2F2E2E;
 
 .colLink:hover { /* Au survol des liens, on leurs change leurs couleurs en blancs */
   color: white;
-}
-
-
-.headerLeft { /* Navigateur à gauche du logo */
-  padding: 7% 0 0 0;
-  margin: 0 0 0 0%;
-}
-
-
-.headerRight { /* Navigateur à droite du logo */
-  padding: 9% 0 0 0;
-}
-
-.headerRightConnect {
-  padding: 7% 0 0 0;
-}
-
-.txtac {
-  justify-content: center;
-  text-align: center;
-  padding: 1%;
-  margin: 0 0 0 7%;
-}
-
-.txtad {
-  margin: 0 0 0 25.5%;
-}
-
-
-.separator { /* Il s'agit du hr au dessus du footer */
-  color: red;
-  width: 50%;
-  border: 2px solid;
-  border-radius: 50%;
-  opacity: 0.3;
 }
 
 .footerContainer {
@@ -143,10 +98,137 @@ color: #2F2E2E;
   left: 0;
 }
 
-.jcc {
-  justify-content: center;
-}
-
 .df {
   display: flex;
+}
+
+
+/* header */
+
+.ulPlacement {
+margin: 6.5% 0 0 0 0;
+}
+
+.liBackground {
+  background-color: #1B1A1A;
+}
+
+.header {
+  background-color: #1B1A1A;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  min-height: 150px;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+border:none;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #282626;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+/* menu */
+
+.menu {
+  margin: 15% 0 0 0;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 2px 2% 0 0;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  display: block;
+  position: relative;
+  transition: background .2s ease-out;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 760px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+
+
+/* 48em = 768px */
+
+@media (min-width: 1600px) {
+
+  .baseContainer {
+    font-size: 1.4em;
+  }
+
+  .header li {
+    float: left;
+
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    margin: -5.5% 0 0 0;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }

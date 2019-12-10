@@ -2,6 +2,10 @@
   margin: -1.3% 0 0px 0;
 }
 
+.w-100 {
+  height: auto;
+}
+
 .carouselBtn { /*Les boutons ne sont passes pas sur le header grâce à ce z-index */
   z-index: 1;
 }
@@ -58,11 +62,18 @@ line-height: 2em;
   min-height: 500px;
 }
 
-.dispoFormule {
+.formuleDirection {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: column;
 }
+
+.posFormule {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 2% 3% 2%;
+}
+
 
 .carouselWith {
   width: 300px;
@@ -74,7 +85,7 @@ line-height: 2em;
 }
 
 .formuleTitle {
-  width: 350px;
+  width: 320px;
   font-size: 1.5em;
 }
 
@@ -91,6 +102,10 @@ line-height: 2em;
   color: #2F2E2E;
 }
 
+
+
+
+
 .horaireBackground {
     background-color: #1F1E1E;
     padding: 3% 0 3% 0;
@@ -98,4 +113,11 @@ line-height: 2em;
 
 .horraireTitle {
   margin: 0 0 2% 0;
+}
+
+@media (min-width: 1600px) {
+
+  .w-100 {
+    height: 1080px;
+  }
 }

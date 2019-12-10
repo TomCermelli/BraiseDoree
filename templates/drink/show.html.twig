@@ -8,31 +8,31 @@
     <table class="table">
         <tbody>
             <tr>
-                <th class="redcol">Id</th>
-                <td class="whitecol">{{ drink.id }}</td>
+                <th>Id</th>
+                <td class="txtBlackecol">{{ drink.id }}</td>
             </tr>
             <tr>
-                <th class="redcol">Name</th>
-                <td class="whitecol">{{ drink.name }}</td>
+                <th>Name</th>
+                <td class="txtBlackecol">{{ drink.name }}</td>
             </tr>
             <tr>
-                <th class="redcol">Price</th>
-                <td class="whitecol">{{ drink.price }}</td>
+                <th>Price</th>
+                <td class="txtBlackecol">{{ drink.price }}</td>
             </tr>
             <tr>
-                <th class="redcol">Centiliter</th>
-                <td class="whitecol">{{ drink.centiliter }}</td>
+                <th>Centiliter</th>
+                <td class="txtBlackecol">{{ drink.centiliter }}</td>
             </tr>
             <tr>
-                <th class="redcol">Image</th>
-                <td class="whitecol">{{ drink.image }}</td>
+                <th>Image</th>
+                <td class="txtBlackecol">{{ drink.image }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a class="redcol colLink linkUnderline" href="{{ path('drink_index') }}">back to list</a>
+    <a class="titleBlackcol colLink linkUnderline" href="{{ path('drink_index') }}">back to list</a>
 
-    <a class="redcol colLink linkUnderline" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
+    <a class="titleBlackcol colLink linkUnderline" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
 
-    {{ include('drink/_delete_form.html.twig') }}
+    <span class="titleBlackcol">{{ include('drink/_delete_form.html.twig') }}</span>
 {% endblock %}

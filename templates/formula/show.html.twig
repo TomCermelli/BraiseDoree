@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formule{% endblock %}
+
+{% block body %}
+    <h1>Formule</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="redcol">Id</th>
+                <td class="whitecol">{{ formula.id }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Name</th>
+                <td class="whitecol">{{ formula.name }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Price</th>
+                <td class="whitecol">{{ formula.price }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Produit</th>
+                <td class="whitecol">{{ formula.produit }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Dessert</th>
+                <td class="whitecol">{{ formula.dessert }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Boisson</th>
+                <td class="whitecol">{{ formula.drink }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Image</th>
+                <td class="whitecol">{{ formula.image }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Image2</th>
+                <td class="whitecol">{{ formula.image2 }}</td>
+            </tr>
+            <tr>
+                <th class="redcol">Image3</th>
+                <td class="whitecol">{{ formula.image3 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="redcol colLink linkUnderline" href="{{ path('formula_index') }}">back to list</a>
+
+    <a class="redcol colLink linkUnderline" href="{{ path('formula_edit', {'id': formula.id}) }}">edit</a>
+
+    {{ include('formula/_delete_form.html.twig') }}
+{% endblock %}

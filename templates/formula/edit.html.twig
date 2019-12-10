@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Drink{% endblock %}
+{% block title %}New Drink{% endblock %}
 
 {% block body %}
 <link href="{{asset('css/admin/drink.css') }}" rel="stylesheet" type="text/css"/>
@@ -9,7 +9,7 @@
 <div class="placementForm">
   <div>
     <div>
-      <h1 class="redcol titrePrincipal">Edit une boisson</h1>
+      <h1 class="redcol titrePrincipal">Crée une nouvelle Formule</h1>
     </div>
     {{form_start(form)}}
 
@@ -24,10 +24,10 @@
       </div>
       <div class="form-group inputDisposition">
         <div class="labelDisposition">
-          {{ form_label(form.centiliter, 'Centilitre') }}
+          {{ form_label(form.price, 'Prix') }}
         </div>
         <div class="formDisposition">
-          {{form_row(form.centiliter, {'label': ' ', 'attr': {'placeholder': 'Centilitre ...', 'class': 'form-control'} })}}
+          {{form_row(form.price, {'label': ' ', 'attr': {'placeholder': 'Centilitre ...', 'class': 'form-control'} })}}
         </div>
       </div>
     </div>
@@ -35,20 +35,41 @@
     <div class="df">
       <div class="form-group inputDisposition">
         <div class="labelDisposition">
-          {{ form_label(form.price, 'Prix Moyen') }}
+          {{ form_label(form.produit, 'Produit') }}
         </div>
         <div class="formDisposition">
-          {{form_row(form.price, {'label': ' ', 'attr': {'placeholder': 'Prix Moyens ...', 'class': 'form-control'} })}}
+          {{form_row(form.produit, {'label': ' ', 'attr': {'placeholder': 'Prix Moyens ...', 'class': 'form-control'} })}}
         </div>
       </div>
+
+      <div class="form-group inputDisposition">
+        <div class="labelDisposition">
+          {{ form_label(form.dessert, 'Dessert') }}
+        </div>
+        <div class="formDisposition">
+          {{form_row(form.dessert, {'label': ' ', 'attr': {'placeholder': 'Prix Moyens ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+
+      <div class="form-group inputDisposition">
+        <div class="labelDisposition">
+          {{ form_label(form.drink, 'Boisson') }}
+        </div>
+        <div class="formDisposition">
+          {{form_row(form.drink, {'label': ' ', 'attr': {'placeholder': 'Prix Moyens ...', 'class': 'form-control'} })}}
+        </div>
+      </div>
+
       <div class="imageDisposition">
         {{form_row(form.imageFile)}}
+        {{form_row(form.imageFile2)}}
+        {{form_row(form.imageFile3)}}
       </div>
     </div>
 
     <div class="inputDisposition">
       <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
-      <a class="titleRedcol colLink linkUnderline" href="{{ path('drink_index') }}">back to list</a>
+      <a class="redcol colLink linkUnderline" href="{{ path('formula_index') }}">back to list</a>
     </div>
     {{form_end(form)}}
   </div>

@@ -6,8 +6,8 @@
     <h1>Drink index</h1>
 
     <table class="table">
-        <thead class="redcol">
-            <tr class="redcol">
+        <thead>
+            <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Price</th>
@@ -18,15 +18,15 @@
         </thead>
         <tbody>
         {% for drink in drinks %}
-            <tr class="whitecol">
-                <td class="redcol">{{ drink.id }}</td>
+            <tr class="txtBlackecol">
+                <td>{{ drink.id }}</td>
                 <td>{{ drink.name }}</td>
                 <td>{{ drink.price }}</td>
                 <td>{{ drink.centiliter }}</td>
                 <td>{{ drink.image }}</td>
                 <td>
-                    <a class="redcol colLink linkUnderline" href="{{ path('drink_show', {'id': drink.id}) }}">show</a>
-                    <a class="redcol colLink linkUnderline" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
+                    <a class="titleBlackcol colLink linkUnderline" href="{{ path('drink_show', {'id': drink.id}) }}">show</a>
+                    <a class="titleBlackcol colLink linkUnderline" href="{{ path('drink_edit', {'id': drink.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

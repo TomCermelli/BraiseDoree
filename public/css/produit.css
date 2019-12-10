@@ -11,7 +11,7 @@
 
 .ancrage { /*lien perméttant de se déplacer instantanément au gros titre correspondant*/
   display:flex;
-  margin: 2% 1% 8% 1% ;
+  margin: 2% 1% 0% 1% ;
 }
 
 .shortcut { /*Div des plusieurs liens d'ancrages perméttants un déplacement rapide sur la page*/
@@ -21,7 +21,7 @@
 
 .downloadBtn {
   text-align: center;
-  margin: -5% 0 4% 0;
+  margin: 5% 0 4% 0;
 }
 
 
@@ -54,7 +54,7 @@
 }
 
 .pizzaRouge {
-  background-color: #1F1E1E;
+  background-color: #1B1A1A;
 }
 
 .allPizza { /*Div regroupant les 3 types de pizzas*/
@@ -75,7 +75,7 @@
 
 
 .divPizza {/*div principale du prix regroupant le titre et les ingrédients assocciés à la pizza*/
-  width: 25%;
+  width: 80%;
   min-height: 50%;
   text-align: center;
   display: flex;
@@ -105,24 +105,8 @@
   flex-direction: column;
 }
 
-#ciabatta {
-  padding: 110px 0 0 0;
-}
-
-#lasagne {
-  padding: 110px 0 0 0;
-}
-
-#drink {
-  padding: 110px 0 0 0;
-}
-
-#dessert {
-  padding: 110px 0 0 0;
-}
-
 .lasagneBackground {
-  background-color: #1F1E1E;
+  background-color: #1B1A1A;
   min-height: 500px;
 }
 
@@ -132,7 +116,7 @@
 }
 
 .drinkBackground {
-  background-color: #1F1E1E;
+  background-color: #1B1A1A;
   min-height: 500px;
 }
 
@@ -173,4 +157,14 @@
 
 .produitTitleSize {
   font-size: 1.8em;
+}
+
+.idPadding {
+  padding: 110px 0 0 0;
+}
+
+@media (min-width: 1600px) {
+  .divPizza {
+    width: 25%;
+  }
 }

@@ -15,6 +15,18 @@ La Braise Dorée, Nos pizzas et autres produits
 
 <div class="shortcut linkDecoration"> <!--La div regroupant les liens perméttant de se déplacer rapidement à des points d'ancrages-->
   <div class="ancrage">
+    <h3 class=""><a href="#pizzaRouge" class="titleBlackcol nav-link colLink linkUnderline linkSize">Pizza Rouge</a></h3>
+  </div>
+  <div class="ancrage">
+    <h3 class=""><a href="#pizzaBlanche" class="titleBlackcol nav-link colLink linkUnderline linkSize">Pizza Blanche</a></h3>
+  </div>
+  <div class="ancrage">
+    <h3 class=""><a href="#pizzaSucre" class="titleBlackcol nav-link colLink linkUnderline linkSize">Pizza Sucrée</a></h3>
+  </div>
+</div>
+
+<div class="shortcut linkDecoration"> <!--La div regroupant les liens perméttant de se déplacer rapidement à des points d'ancrages-->
+  <div class="ancrage">
     <h3 class=""><a href="#lasagne" class="titleBlackcol nav-link colLink linkUnderline linkSize">Lasagnes</a></h3>
   </div>
   <div class="ancrage">
@@ -31,7 +43,8 @@ La Braise Dorée, Nos pizzas et autres produits
   <a class="redcol" href="/pdf"><input class="btn" type="submit" name="submit" value="Télécharger Notre Carte"></a>
 </div>
 
-
+<div class="idPadding" id="pizzaRouge">
+</div>
 <div class="placementProduit txtWhitecol pizzaRouge"> <!--Cette div permet de placer toute les pizzas rouge ainsi que toute les informations lié à la pizza-->
   <h2 class="titleRedcol primaryTitle titleSize">Pizza Rouge</h2>
   {% for pizza in red_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les pizzas rouges pour celle-ci)-->
@@ -56,6 +69,8 @@ La Braise Dorée, Nos pizzas et autres produits
   {% endfor %}
 </div>
 
+<div class="idPadding" id="pizzaBlanche">
+</div>
 <div class=" placementProduit"> <!--Cette div permet de placer toute les pizzas rouge ainsi que toute les informations lié à la pizza-->
   <h2 class="titleBlackcol primaryTitle titleSize">Pizza Blanche</h2>
   {% for pizza in white_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les pizzas blanches pour celle-ci)-->
@@ -78,6 +93,8 @@ La Braise Dorée, Nos pizzas et autres produits
     </div>
   </div>
   {% endfor %}
+  <div class="idPadding" id="pizzaSucre">
+  </div>
   <h2 class="titleBlackcol primaryTitle titleSize">La Sucrée</h2>
   <div class="autreProduit">
     {% for pizza in other_pizza  %} <!--On utilise une boucle afin de pouvoir placer automatiquement toute les pizzas de ce type sous la forme voulue ( les autres type de pizzas, ici les pizzas de type sucrée)-->
@@ -103,7 +120,7 @@ La Braise Dorée, Nos pizzas et autres produits
 </div>
 
 </div>
-<div id="lasagne">
+<div class="idPadding" id="lasagne">
   <div class="lasagneBackground txtWhitecol">
     <h2 class="titleRedcol titleSize primaryTitle">Lasagnes</h2>
     <p class="lasagneTxt">Accompagnée de salade et d'une boisson <br> Sur place 9€</p>
@@ -121,7 +138,7 @@ La Braise Dorée, Nos pizzas et autres produits
 </div>
 </div>
 
-<div id="ciabatta">
+<div class="idPadding" id="ciabatta">
 </div>
 <div >
   <h2 class="titleBlackcol titleSize primaryTitle" >Ciabattas</h2>
@@ -143,7 +160,7 @@ La Braise Dorée, Nos pizzas et autres produits
   {% endfor %}
 </div>
 
-<div id="drink">
+<div class="idPadding" id="drink">
   <div class="drinkBackground">
     <h2 class="titleRedcol titleSize primaryTitle">Boissons</h2>
     <div class="produitTypePlacement">
@@ -161,7 +178,7 @@ La Braise Dorée, Nos pizzas et autres produits
 
 
 
-<div  id="dessert">
+<div class="idPadding" id="dessert">
   <div class="dessertHeight">
     <h2 class="titleBlackcol titleSize primaryTitle" >Desserts</h2>
     <div class="produitTypePlacement">

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formule index{% endblock %}
+
+{% block body %}
+    <h1>Formule index</h1>
+
+    <table class="table">
+        <thead class="redcol">
+            <tr class="redcol">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Produit</th>
+                <th>Dessert</th>
+                <th>Boisson</th>
+                <th>Image</th>
+                <th>Image2</th>
+                <th>Image3</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formula in formulas %}
+            <tr class="whitecol">
+                <td class="redcol">{{ formula.id }}</td>
+                <td>{{ formula.name }}</td>
+                <td>{{ formula.price }}</td>
+                <td>{{ formula.produit }}</td>
+                <td>{{ formula.dessert }}</td>
+                <td>{{ formula.drink }}</td>
+                <td>{{ formula.image }}</td>
+                <td>{{ formula.image2 }}</td>
+                <td>{{ formula.image3 }}</td>
+                <td>
+                    <a class="redcol colLink linkUnderline" href="{{ path('formula_show', {'id': formula.id}) }}">show</a>
+                    <a class="redcol colLink linkUnderline" href="{{ path('formula_edit', {'id': formula.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="redcol colLink linkUnderline" href="{{ path('formula_new') }}">Create new</a>
+{% endblock %}
