@@ -6,7 +6,7 @@
 <link href="{{asset('css/admin/pizza.css') }}" rel="stylesheet" type="text/css"/>
 <!--Descriptif des classes dans le fichier css correspondant (css/admin/pizza.css)-->
 
-<h1 class="redcol titrePrincipal">Edit une Pizza</h1>
+<h1 class="titleBlackcol titrePrincipal">Edit une Pizza</h1>
 <div class="placementForm">
   <div>
 
@@ -65,8 +65,8 @@
         {{ form_row(form.imageFile, {'label': ' '}) }}
       </div>
       <div class="posSave">
-        <button class="btn redcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
-        <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">back to list</a>
+        <button class="btn titleBlackcol buttonSize linkUnderline">{{ button_label|default('Sauvegarder') }}</button>
+        <a class="titleBlackcol colLink linkUnderline" href="{{ path('pizza_index') }}">back to list</a>
       </div>
     </div>
     {{form_end(form)}}

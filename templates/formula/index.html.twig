@@ -6,8 +6,8 @@
     <h1>Formule index</h1>
 
     <table class="table">
-        <thead class="redcol">
-            <tr class="redcol">
+        <thead>
+            <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Price</th>
@@ -22,8 +22,8 @@
         </thead>
         <tbody>
         {% for formula in formulas %}
-            <tr class="whitecol">
-                <td class="redcol">{{ formula.id }}</td>
+            <tr class="txtBlackecol">
+                <td>{{ formula.id }}</td>
                 <td>{{ formula.name }}</td>
                 <td>{{ formula.price }}</td>
                 <td>{{ formula.produit }}</td>
@@ -33,8 +33,8 @@
                 <td>{{ formula.image2 }}</td>
                 <td>{{ formula.image3 }}</td>
                 <td>
-                    <a class="redcol colLink linkUnderline" href="{{ path('formula_show', {'id': formula.id}) }}">show</a>
-                    <a class="redcol colLink linkUnderline" href="{{ path('formula_edit', {'id': formula.id}) }}">edit</a>
+                    <a class="titleBlackcol colLink linkUnderline" href="{{ path('formula_show', {'id': formula.id}) }}">show</a>
+                    <a class="titleBlackcol colLink linkUnderline" href="{{ path('formula_edit', {'id': formula.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -45,5 +45,5 @@
         </tbody>
     </table>
 
-    <a class="redcol colLink linkUnderline" href="{{ path('formula_new') }}">Create new</a>
+    <a class="titleBlackcol colLink linkUnderline" href="{{ path('formula_new') }}">Create new</a>
 {% endblock %}

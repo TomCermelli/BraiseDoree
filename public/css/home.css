@@ -3,7 +3,7 @@
 }
 
 .w-100 {
-  height: auto;
+  height: 551px;
 }
 
 .carouselBtn { /*Les boutons ne sont passes pas sur le header grâce à ce z-index */

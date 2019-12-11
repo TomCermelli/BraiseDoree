@@ -3,44 +3,44 @@
 {% block title %}Pizza{% endblock %}
 
 {% block body %}
-    <h1>Pizza</h1>
+    <h1 class="titleBlackcol titleSize">Pizza</h1>
 
     <table class="table">
-        <tbody>
+        <tbody class="txtBlackcol">
             <tr>
-                <th class="redcol">Id</th>
-                <td class="whitecol">{{ pizza.id }}</td>
+                <th class="titleBlackcol">Id</th>
+                <td>{{ pizza.id }}</td>
             </tr>
             <tr>
-                <th class="redcol">Nom</th>
-                <td class="whitecol">{{ pizza.name }}</td>
+                <th class="titleBlackcol">Nom</th>
+                <td>{{ pizza.name }}</td>
             </tr>
             <tr>
-                <th class="redcol">Ingredient</th>
-                <td class="whitecol">{{ pizza.ingredient }}</td>
+                <th class="titleBlackcol">Ingredient</th>
+                <td>{{ pizza.ingredient }}</td>
             </tr>
             <tr>
-                <th class="redcol">Sauce</th>
-                <td class="whitecol">{{ pizza.sauce }}</td>
+                <th class="titleBlackcol">Sauce</th>
+                <td>{{ pizza.sauce }}</td>
             </tr>
             <tr>
-                <th class="redcol">Prix de la petite pizza</th>
-                <td class="whitecol">{{ pizza.price }}</td>
+                <th class="titleBlackcol">Prix de la petite pizza</th>
+                <td>{{ pizza.price }}</td>
             </tr>
             <tr>
-                <th class="redcol">Prix de la grande pizza</th>
-                <td class="whitecol">{{ pizza.highPrice }}</td>
+                <th class="titleBlackcol">Prix de la grande pizza</th>
+                <td>{{ pizza.highPrice }}</td>
             </tr>
             <tr>
-                <th class="redcol">Image</th>
-                <td class="whitecol">{{ pizza.image }}</td>
+                <th class="titleBlackcol">Image</th>
+                <td>{{ pizza.image }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a class="redcol colLink linkUnderline" href="{{ path('pizza_index') }}">revenir à la liste,</a>
+    <a class="titleBlackcol colLink linkUnderline" href="{{ path('pizza_index') }}">revenir à la liste,</a>
 
-    <a class="redcol colLink linkUnderline" href="{{ path('pizza_edit', {'id': pizza.id}) }}">edit</a>
+    <a class="titleBlackcol colLink linkUnderline" href="{{ path('pizza_edit', {'id': pizza.id}) }}">edit</a>
 
     {{ include('pizza/_delete_form.html.twig') }}
 {% endblock %}
