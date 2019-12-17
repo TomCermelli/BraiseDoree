@@ -11,6 +11,7 @@
         "knplabs/knp-snappy-bundle": "^1.6",
         "mikehaertl/phpwkhtmltopdf": "^2.4",
         "sensio/framework-extra-bundle": "^5.1",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "4.3.*",
         "symfony/console": "4.3.*",
         "symfony/dotenv": "4.3.*",
@@ -24,6 +25,7 @@
         "symfony/orm-pack": "^1.0",
         "symfony/process": "4.3.*",
         "symfony/profiler-pack": "^1.0",
+        "symfony/requirements-checker": "^1.1",
         "symfony/security-bundle": "4.3.*",
         "symfony/serializer-pack": "*",
         "symfony/swiftmailer-bundle": "^3.1",
@@ -68,7 +70,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "requirements-checker": "script"
         },
         "post-install-cmd": [
             "@auto-scripts"

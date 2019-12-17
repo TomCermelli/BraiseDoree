@@ -16,6 +16,5 @@ return [
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
-    Sonata\SeoBundle\SonataSeoBundle::class => ['all' => true],
     Knp\Bundle\SnappyBundle\KnpSnappyBundle::class => ['all' => true],
 ];
