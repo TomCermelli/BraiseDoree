@@ -79,19 +79,6 @@ abstract class AllProduct
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function getId(): ?int
     {
         return $this->id;
