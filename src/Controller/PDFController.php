@@ -38,19 +38,8 @@ class PDFController extends AbstractController
       'margin-right' => 0,
       'margin-bottom' => 0,
       'margin-left' => 0,
-
-
     ];
-     /*Décomenter cette partie et commenté la partie en bas afin de pouvoir
-    return new Response (
-      $snappy->getOutputFromHtml($html, $option),
-      // ok status code
-      200,
-      array(
-        'Content-Type' =>'application/pdf',
-        'Content-Disposition' => sprintf('inline; filename="'.$filename.'.pdf"')
-      )
-    );*/
+    /* les options mises ici permettent au pdf de ne pas avoir la marge pas défaut*/
 
     $pdfContents=$snappy->getOutputFromHtml($html, $option);
     // on l'envoie au navigateur

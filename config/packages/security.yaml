@@ -1,16 +1,17 @@
 
 security:
-    encoders:
+    encoders: # Cela indique quelle entité on va encoder avec quelle moyen
       App\Entity\User:
+        # On indique à l'encoders quelle on doit cibler, ici l'entité User
           algorithm: bcrypt
+          # On applique un algorithm à cette entité, l'algorithm bcrypt permet un cryptage sécurisé du mot de passe
 
-    providers:
+    providers:  # Le providers est le comportement que l'on veut utiliser par la suite
         in_memory: { memory: null }
-        in_database:
+        in_database: # Il s'agit de ma personalisation, il peut être nommé comme bon me semble
           entity:
             class: App\Entity\User
             property: mail
-            #le providers est le comportement que l'on veut utiliser par la ensuite
             #in_database veut dire que l'on va demander à symfony d'aller chercher l'attribut mail dans la classe User pour le login
 
 
@@ -22,16 +23,16 @@ security:
         main:
             anonymous: true
             provider: in_database
-            #On utilise le provider personalisé qui se trouve au dessus
+            # On utilise le provider personalisé qui se trouve au dessus
 
-            #On indique le chemin qu'il doit prendre pour le formulaire login
+            # On indique le chemin qu'il doit prendre pour le formulaire login
             form_login:
-              login_path: security_login
-              check_path: security_login
+              login_path: security_login # Le chemin pour se connecter
+              check_path: security_login # On vérifie le chemin emprunté
 
 
             logout:
-              path: security_logout
+              path: security_logout # Ce chemin permet de se déconnecter
               target: contact_index
 
 
@@ -45,5 +46,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/panier, roles: ROLE_USER }
+      #ici on indique les chemins autorisés pour chaque rôle
+        - { path: ^/admin, roles: ROLE_ADMIN } #Ici, nous devons avoir le ROLE_ADMIN pour pouvoir aller au page commencant par /admin
+        - { path: ^/panier, roles: ROLE_USER } #Il faut au moin avoir le ROLE_USER pour accédé à la route /panier
