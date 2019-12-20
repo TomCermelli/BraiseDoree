@@ -3,13 +3,13 @@
 {% block stylesheets %}
 <style type="text/css">
 @font-face { /*Police des titres, liens*/
-  font-family: 'Lobster';
-  src:url("{{asset('css/fonts/Lobster-Regular.ttf')}}") format('truetype');
+font-family: 'Lobster';
+src:url("{{asset('css/fonts/Lobster-Regular.ttf')}}") format('truetype');
 }
 
 @font-face { /*Police du texte en général*/
-  font-family: 'Cabin';
-  src:url("{{asset('css/fonts/Cabin-Regular.ttf')}}") format('truetype');
+font-family: 'Cabin';
+src:url("{{asset('css/fonts/Cabin-Regular.ttf')}}") format('truetype');
 }
 </style>
 
@@ -19,56 +19,53 @@
 {% block basebody %}
 <!--Descriptif des classes dans le fichier css correspondant (css/base.css)-->
 <body>
-  <!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
-  <div class="baseContainer">
-    <header class="header">
-      <a href="" class="logo">
-        <img src="{{asset('asset/logo.png')}}" alt="Logo de la BraiseDorée" width="300px" height="150px">
-      </a>
-      <input class="menu-btn" type="checkbox" id="menu-btn" />
-      <div class="tailleBtn">
-        <label class="menu-icon" for="menu-btn"><span class=" menu titleRedcol titleSize">Menu</span></label>
-      </div>
-      <ul class="menu ulPlacement">
-        <li><a class="titleRedcol colLink linkUnderline linkSize liBackground" href="/">Accueil</a></li>
-        <li><a class="titleRedcol colLink linkUnderline linkSize liBackground" href="/produit">Nos Produits</a></li>
-        <li><a class="titleRedcol colLink linkUnderline linkSize liBackground" href="/contact">Contact</a></li>
-        {% if not app.user %}
-        <li class="nav-item headerRight">
-          <a class="nav-link titleRedcol colLink linkUnderline linkSize  liBackground" href="/connexion">Connexion</a>
-        </li>
-        {% else %}
-        <li class="nav-item headerRightConnect">
-          <a class="nav-link titleRedcol colLink linkUnderline linkSize  liBackground" href="{{ path('security_logout') }}">Déconnexion</a>
-        </li>
-        {% endif %}
-        {% if is_granted('ROLE_ADMIN') %}
-        <li class="nav-item headerRightConnect">
-          <a class="nav-link titleRedcol colLink linkUnderline linkSize liBackground" href="/admin">Admin</a>
-        </li>
-        {% endif %}
-      </ul>
-    </header>
-
-    <div class="blockContainer">
-      {% block body %}{% endblock %}
+<!--Le container utilisé pour toute les pages, il est utilisé pour la typo et le background-->
+<div class="baseContainer">
+  <header class="header">
+    <a href="" class="logo">
+      <img src="{{asset('asset/logo.png')}}" alt="Logo de la BraiseDorée" width="300px" height="150px">
+    </a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <div class="tailleBtn">
+      <label class="menu-icon" for="menu-btn"><span class=" menu titleRedcol titleSize">Menu</span></label>
     </div>
+    <ul class="menu ulPlacement">
+      <li><a class="titleRedcol colLink linkUnderline linkSize liBackground" href="/">Accueil</a></li>
+      <li><a class="titleRedcol colLink linkUnderline linkSize liBackground" href="/produit">Nos Produits</a></li>
+      <li><a class="titleRedcol colLink linkUnderline linkSize liBackground" href="/contact">Contact</a></li>
+      {% if not app.user %}
+      <li class="nav-item headerRight">
+        <a class="nav-link titleRedcol colLink linkUnderline linkSize  liBackground" href="/connexion">Connexion</a>
+      </li>
+      {% else %}
+      <li class="nav-item headerRightConnect">
+        <a class="nav-link titleRedcol colLink linkUnderline linkSize  liBackground" href="{{ path('security_logout') }}">Déconnexion</a>
+      </li>
+      {% endif %}
+      {% if is_granted('ROLE_ADMIN') %}
+      <li class="nav-item headerRightConnect">
+        <a class="nav-link titleRedcol colLink linkUnderline linkSize liBackground" href="/admin">Admin</a>
+      </li>
+      {% endif %}
+    </ul>
+  </header>
 
-    <footer>
-      <div class="footerContainer"> <!--container du footer-->
-        <div class="">
-          <div class="">
-            <h3 class="titleRedcol">Suivez-nous</h3>
-            <span class="reseauSociau">
-              <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x whitecol"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
-            </span>
-          </div>
-          <div class="">
-          </div>
-        </div>
-      </div>
-    </footer>
+  <div class="blockContainer">
+    {% block body %}{% endblock %}
   </div>
+
+  <footer>
+    <div class="footerContainer"> <!--container du footer-->
+          <h3 class="titleRedcol">Suivez-nous</h3>
+          <span class="reseauSociau">
+            <a href="https://www.facebook.com/labraise.doree.71"><i class="fab fa-facebook-f fa-2x whitecol"></i></a> <!--Icônes des réseaux sociaux et lien perméttant d'y accéder-->
+          </span>
+        <div class="credit txtWhitecol">
+          <p>Réalisé par: <a class="colLink titleRedcol" href="https://github.com/TomCermelli?tab=repositories">Tom CERMELLI</a></p>
+        </div>
+    </div>
+  </footer>
+</div>
 
 
 

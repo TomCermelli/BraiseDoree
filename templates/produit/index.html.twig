@@ -41,7 +41,7 @@ La Braise Dorée, Nos pizzas et autres produits
 </div>
 <!--
 <div class="downloadBtn">
-  <a class="redcol" href="/pdf"><input class="btn" type="submit" name="submit" value="Télécharger Notre Carte"></a>
+<a class="redcol" href="/pdf"><input class="btn" type="submit" name="submit" value="Télécharger Notre Carte"></a>
 </div>-->
 
 <div class="idPadding" id="pizzaRouge">
@@ -119,24 +119,22 @@ La Braise Dorée, Nos pizzas et autres produits
     {% endfor %}
   </div>
 </div>
-
-</div>
 <div class="idPadding" id="lasagne">
   <div class="lasagneBackground txtWhitecol">
     <h2 class="titleRedcol titleSize primaryTitle">Lasagnes</h2>
     <p class="lasagneTxt">Accompagnée de salade et d'une boisson <br> Sur place 9€</p>
     <div class="produitTypePlacement">
-    {% for product in lasagne %}
-    <div class="divSeparation">
-      <div class="placementProduit"> <!--On regroupe les produits par leurs images et leurs texte juste en dessous-->
-        <!--Route de l'image du produit via VichUploaderBundle-->
-        <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="320px" height="300px">
-        <p class="nomProduit txtWhitecol produitTitleSize">{{ product.name }}</p>
+      {% for product in lasagne %}
+      <div class="divSeparation">
+        <div class="placementProduit"> <!--On regroupe les produits par leurs images et leurs texte juste en dessous-->
+          <!--Route de l'image du produit via VichUploaderBundle-->
+          <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" width="320px" height="300px">
+          <p class="nomProduit txtWhitecol produitTitleSize">{{ product.name }}</p>
+        </div>
       </div>
+      {% endfor %}
     </div>
-  {% endfor %}
-</div>
-</div>
+  </div>
 </div>
 
 <div class="idPadding" id="ciabatta">
@@ -172,9 +170,9 @@ La Braise Dorée, Nos pizzas et autres produits
           <p class="nomProduit txtWhitecol">{{ drink.name }} {{ drink.centiliter }} à {{ drink.price }}€</p>
         </div>
       </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</div>
 </div>
 
 
